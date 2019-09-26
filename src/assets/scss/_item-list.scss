@@ -1,0 +1,16 @@
+.item-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    padding-bottom: 10px;
+    word-break: break-all;
+    p {
+      margin: 0;
+      padding: 0!important;
+    }
+  }
+}
+.item-line-title {
+  font-weight: bold;
+}

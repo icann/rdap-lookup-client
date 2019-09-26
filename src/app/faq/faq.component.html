@@ -1,0 +1,229 @@
+<div class="row">
+  <div class="small-12 large-12 medium-12 columns">
+    <h1>
+        <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Domain Name Registration")'>Domain Name Registration</abbr>
+        Data Lookup Frequently Asked Questions (FAQs)
+    </h1>
+
+    <h2>What is the Domain Name Registration Data Lookup?</h2>
+    <p>
+      ICANN created this website as a free public service that gives you the ability to look up publicly available
+      contact and other information related to a domain name.
+    </p>
+
+
+    <h2>How does the Domain Name Registration Data Lookup work?</h2>
+    <p>
+      The	Domain	Name	Registration	Data	Lookup	website	is	a	javascript-based	client
+      application	which	makes	use of	the	Registration	Data	Access	Protocol	(RDAP)	to	query,
+      parse	and	display	registration	data in a human-friendly format.
+      The	results	displayed	come	directly	from <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Registry Operators")'>registry operators</abbr>
+      and/or <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Registrars")'>registrars</abbr>
+      in real-time. If	the	queried	information	is	not	available	in	RDAP,	the	query	will
+      be	redirected	to	whois.icann.org. This	process	is known as a	WHOIS	failover	lookup
+      which	occurs	when	queried	information	is	not	available	in RDAP	and	a	WHOIS	protocol
+      lookup	is	used	as	a	backup	operation	to	attempt	to	provide	available
+      registration data.
+    </p>
+
+    <h2>What is the Registration Data Access Protocol (RDAP)?</h2>
+    <p>
+      RDAP is a	computer network communications	protocol for	accessing	Domain Name	Registration Data	in a structured way. RDAP is	an alternative to	the	WHOIS	protocol and can be
+      used	to	look	up	relevant	registration data	from	such	Internet	resources	as	domain	names,	IP	addresses,	and	autonomous	system	numbers. In its basic form, RDAP	is not intended	to offer a
+      "human-friendly"	view	of	the	data.	However,	its	structured	output does	enable	more	human-friendly services to be created.
+    </p>
+
+    <h2>What data is available?</h2>
+    <p>
+      When a	domain	name	is	registered,	the	registered	name	holder	must	provide	a	set	of	information	to	the registering	entity,	such as a	registrar.
+      That information	is	referred	to	as	"Domain	Name	Registration	Data." Due to	applicable	law	and	ICANN	policies,	not	all	Domain	Name	Registration	Data	is	required	to	be	returned	in response	to
+      a	lookup	request. As a result, there	may	be variances across registrars	and	registry operators in what	data	is	returned	in	response	to	a	lookup	request. Please see	FAQ	"Will	all	available	data be visible?"	for
+      more information.
+    </p>
+
+    <h2>Will all available data be visible?</h2>
+    <p>
+      Some	available	Domain	Name	Registration	Data	may	be	visible	by	only	those	who	have	demonstrated	a legitimate	and	proportionate	purpose	for	viewing	it and have been approved	to do	so.	If the data you	are
+      seeking	is not visible in	response	to	your	lookup request,	it may not	be available	or you should	see	a remark and/or redacted label in the	corresponding	result field	to indicate that there
+      may	be data available	which	is not visible to you.
+    </p>
+
+    <h2>Understanding RDAP Lookup Results</h2>
+    <p>
+      The lookup results may come from both registrars and registry	operators. The	source	of	each	result	field	is not indicated in the	lookup results.	Therefore, the	following	table	is	intended	to	help
+      you	understand the fields displayed	in the	lookup results	and	identify the	source of the data.
+    </p>
+
+    <div class="table-scroll">
+      <table border="1">
+        <thead class="background-blue">
+          <tr>
+            <th>Result Label</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3"><b>Domain Information</b></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>The name of the domain name which was entered into the lookup tool.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Internationalized Domain Name</td>
+            <td>The non-ASCII character name of the domain name which was entered into the lookup tool, if applicable.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Registry Domain ID</td>
+            <td>Registry-unique identifier for a domain name.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Domain Status</td>
+            <td>The status of a domain name registration. Every domain has at least one status code, but they can also have more than one status code. See <a href="https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en" target="_blank">EPP Status Codes</a> for more info.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Nameservers</td>
+            <td>Information regarding the domain name's DNS nameservers. To include nameserver unicode name and IP addresses, where applicable.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Dates</b></td>
+          </tr>
+          <tr>
+            <td>Dates</td>
+            <td>Multiple dates may be displayed in the "Dates" section and can include the date when the domain name registration was created, expires, and updated, as applicable.</td>
+            <td>Registry/Registrar</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Contact Information</b></td>
+          </tr>
+          <tr>
+            <td>Registrant, Administrative, Technical, and Billing Contact Information</td>
+            <td>The contact information of the registrant, administrative, technical, and billing contacts will appear in this section, where applicable.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Registrar Information</b></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>The name of the registrar sponsoring the domain name's registration.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td>IANA ID</td>
+            <td>The registrar's IANA ID from the IANA's Registrar ID registry (<a target="_blank" href="https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml">https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml</a>)</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Abuse contact email</td>
+            <td>The abuse contact email address of the registrar.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td>Abuse contact phone</td>
+            <td>The abuse contact telephone number of the registrar.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Reseller Information</b></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>If the domain name was registered through a registrar's reseller entity, the reseller name MAY appear in the RDAP response.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td>Organization</td>
+            <td>If the domain name was registered through a registrar's reseller entity, the reseller organization MAY appear in the RDAP response.</td>
+            <td>Registrar</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>DNSSEC Information</b></td>
+          </tr>
+          <tr>
+            <td>Delegation Signed</td>
+            <td>
+              This field will display whether the DNSSEC delegation is signed or unsigned.
+            </td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>DS Data</td>
+            <td>Data fields regarding the DNSSEC key(s) used as a Delegation Signer digest record.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td>Key Data</td>
+            <td>Data fields regarding the DNSSEC key(s) used.</td>
+            <td>Registry</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Authoritative Servers</b></td>
+          </tr>
+          <tr>
+            <td>Authoritative Servers</td>
+            <td>The URL(s) of the authoritative server(s) (source) of the lookup results and the date the servers are last updated.</td>
+            <td>Registry/Registrar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The raw	RDAP response	from the applicable	RDAP servers can also	be found at	the	bottom  of the results page	(minimized	by	default) for interested users to view.
+    </p>
+
+    <h2>
+      Can I Perform a WHOIS lookup?
+    </h2>
+    <p>
+        ICANN’s	prior	WHOIS	lookup	service	(whois.icann.org)	is	no	longer	available	and	now	redirects	to	this	Domain
+        Name	Registration	Data	Lookup,	which	utilizes	the	RDAP	service	of	registrars	and	registry	operators.	In	the
+        event	that	the	RDAP	lookup	fails	because	the	relevant	RDAP	service	is	unavailable,	you	will	be	prompted	with
+        a	captcha	request	to	optionally	perform	a	WHOIS	lookup.	If	you	opt-in	to	the	WHOIS	failover	lookup,	the	lookup
+        tool	will	return	results	from	the	relevant	WHOIS	service,	where	available.	The	Domain	Name	Registration	Data
+        Lookup	does	not	provide	a	WHOIS	service	lookup	capability	when	there	is	an	available	RDAP	service	for	the
+        relevant	domain	name.
+    </p>
+
+    <h2>
+      What if the contact data is inaccurate or the service is unavailable?
+    </h2>
+    <p>
+        If	you	believe	the	contact	information	of	the	Registrant,	Administrative,	Technical	or	Billing	Contact	(where
+        applicable)	that	is	returned	in	response	to	a	RDAP	lookup	or	the	optional	WHOIS	failover	lookup	is	inaccurate,
+        or	you	receive	no	lookup	results	due	to	the	unavailability	of	both	RDAP	and	WHOIS	services,	you	may
+        navigate	to	the	WHOIS	Inaccuracy	and	WHOIS	Service	complaint	forms	using	the	“WHOIS	Complaints”	link	at
+        the	top	of	the	page.	These	complaint	forms	will	communicate	these	issues	to	ICANN	Contractual	Compliance
+        for	further	review	and	can	be	used	for	RDAP	service	related	complaints.	Note	that	RDAP	services	are	not
+        required	to	be	implemented	by	registrars	and	registry	operators	until	26 August 2019.
+    </p>
+
+    <h2>
+      References
+    </h2>
+    <ul class="spaced">
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc5733">RFC5733 - EPP Contact Mapping for the contact:disclose data</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7480">RFC7480 - HTTP Usage in the Registration Data Access Protocol</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7481">RFC7481 - Security Services for the Registration Data Access Protocol</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7482">RFC7482 - Registration Data Access Protocol (RDAP) Query Format</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7483">RFC7483 - JSON Responses for the Registration Data Access Protocol</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7484">RFC7484 - Finding the Authoritative Registration Data Service</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7485">RFC7485 - Inventory and Analysis of WHOIS Registration Objects</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc7095">RFC7095 - jCard: The JSON Format for vCard</a></li>
+      <li><a target="_blank" href="https://tools.ietf.org/html/rfc8056">RFC8056 - Extensible Provisioning Protocol (EPP) and Registration Data Access Protocol (RDAP) Status Mapping</a></li>
+    </ul>
+
+    <h2>
+      Contact Global Support
+    </h2>
+    <p>Still have questions? Please send your inquiry to <a href="mailto:globalsupport@icann.org">globalsupport@icann.org</a>.</p>
+  </div>
+</div>

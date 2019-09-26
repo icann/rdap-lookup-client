@@ -1,0 +1,30 @@
+@import '../../assets/scss/variables/variables';
+
+
+.domain-lookup {
+
+  margin-bottom: 30px;
+
+  h1 {
+    padding: 40px 0 11px;
+    color: $color-blue-dark;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto 5px;
+  }
+}
+
+.break-soft {
+  word-break: break-word;
+}
+
+.raw-response {
+  .panel-header {
+    padding: 0 24px 0 9px;
+  }
+}

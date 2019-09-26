@@ -1,0 +1,12 @@
+.accordion {
+  border: 1px $color-grey solid;
+  border-radius: 3px;
+  &.mat-expansion-panel {
+    margin-bottom: 10px;
+  }
+  .mat-expansion-panel-header {
+    color: $color-blue-dark;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

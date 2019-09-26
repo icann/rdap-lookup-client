@@ -1,0 +1,131 @@
+@import '../../assets/scss/variables/variables';
+
+.footer {
+  width: 100vw;
+  &--social {
+    width: 100%;
+    background-color: $color-blue-darker;
+    color: $color-white;
+    @media(max-width: $_BREAKPOINT_TABLET) {
+      padding: 0 20px;
+    }
+    &--links {
+      @media(min-width: $_BREAKPOINT_TABLET) {
+        padding-left: 2%;
+      }
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        font-size: 0.7rem;
+        @media (max-width: $_BREAKPOINT_MOBILE) {
+          flex-basis: 25%;
+        }
+        padding: 10px 0;
+        text-decoration: none;
+        color: $color-white;
+        text-align: center;
+        &:hover {
+          color: $color-blue-light;
+          i {
+            color: $color-white;
+            background-color: $color-blue-light;
+          }
+        }
+        i {
+          margin: 0.25rem auto;
+          background-color: $color-white;
+          color: $color-blue-dark;
+          display: block;
+          width: 2.5rem;
+          padding: 1.25rem 0;
+          font-size: 1.5rem;
+          border-radius: 50px;
+          line-height: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &--links {
+    width: 100vw;
+    background-color: $color-silver-dark;
+    @media(max-width: $_BREAKPOINT_TABLET) {
+      padding: 0 17px;
+    }
+    @media (max-width: $_BREAKPOINT_MOBILE) {
+      display: none;
+    }
+    .row {
+      padding: 0.5%;
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      @media (max-width: $_BREAKPOINT_MOBILE) {
+        padding-left: 10%;
+        flex-wrap: wrap;
+        &> div {
+          flex-basis: 100%;
+        }
+      }
+      .title {
+        font-weight: bold;
+        margin: 15px 0;
+        display: block;
+        word-wrap: break-word;
+        max-width: 200px;
+      }
+      ul {
+        display: block;
+        list-style-type: none;
+        max-width: 200px;
+        word-wrap: break-word;
+        margin-left: 0;
+        padding-left: 0;
+        li {
+          padding: 0;
+          margin: 0;
+          color: $color-grey-dark;
+          font-size: 0.9rem;
+          padding-bottom: 10px;
+          a {
+            color: $color-grey-dark;
+            text-decoration: none;
+            &:hover {
+              color: $color-blue-light;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--copyright {
+    color: $color-grey-dark;
+    padding: 10px 0 5px;
+    @media(max-width: $_BREAKPOINT_TABLET) {
+      padding: 10px 20px 5px;
+    }
+    .row {
+      > div {
+        margin: 0 auto;
+        .links {
+          display: inline;
+          a {
+            text-decoration: none;
+            color: $color-grey-dark;
+            @media (min-width: $_BREAKPOINT_MOBILE) {
+              margin: 0 10px;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

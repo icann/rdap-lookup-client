@@ -1,0 +1,14 @@
+<div class="information-panel" *ngIf="!reseller.entityReseller.isContactEmpty()">
+    <h5 class="information-panel--heading"> Reseller Information </h5>
+
+    <div class="information-panel--body">
+      <ul class="item-list">
+        <li *ngIf="reseller.entityReseller.legalRepresentative"> <span class="item-line-title"> Name:</span> {{ reseller.entityReseller.legalRepresentative }} </li>
+        <li *ngIf="reseller.entityReseller.fn"> <span class="item-line-title"> Organization:</span> {{ reseller.entityReseller.fn }}   </li>
+        <li *ngIf="reseller.entityReseller.email"> <span class="item-line-title"> Email: </span> {{ reseller.entityReseller.email }} </li>
+        <li *ngIf="reseller.entityReseller.phone"> <span class="item-line-title"> Tel: </span> {{ reseller.entityReseller.phone }} </li>
+        <li *ngIf="reseller.entityReseller.fax"> <span class="item-line-title"> Fax: </span> {{ reseller.entityReseller.fax }} </li>
+        <li *ngIf="reseller.entityReseller.mailingAddress"> <span class="item-line-title"> Mailing Address: </span> {{ reseller.entityReseller.mailingAddress }} </li>
+      </ul>
+    </div>
+  </div>
