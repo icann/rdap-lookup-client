@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { DomainFormComponent } from '../domain-form/domain-form.component';
 
 describe('LookupResponseComponent', () => {
@@ -46,8 +45,7 @@ describe('LookupResponseComponent', () => {
         MomentModule,
         BrowserAnimationsModule,
         MatExpansionModule,
-        HttpClientModule,
-        ReCaptchaModule
+        HttpClientModule
       ]
     })
     .compileComponents();

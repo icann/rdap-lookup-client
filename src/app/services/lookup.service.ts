@@ -117,20 +117,17 @@ export class LookupService {
             this.setInfoMessage(`The requested domain was not found in the Registry or Registrar's RDAP server.`);
             this.isWorkingInprogress = false;
           } else {
-            this.setInfoMessage(`We were unable to connect to the identified registry's RDAP server.
-            Attempting lookup using WHOIS service.`);
-            this.displayCaptcha();
+            this.setErrorMessage(`We were unable to connect to the identified registry's RDAP server.`);
+            this.isWorkingInprogress = false;
           }
         } else if (error === 'INVALID_BOOTSTRAP_FILE') {
-          this.setInfoMessage(`Unable to get the bootstrap file: INVALID_BOOTSTRAP_FILE.
-          Attempting lookup using WHOIS service.`);
+          this.setErrorMessage(`Unable to get the bootstrap file: INVALID_BOOTSTRAP_FILE.`);
 
-          this.displayCaptcha();
+          this.isWorkingInprogress = false;
         } else if (error === 'NO_DOMAIN_FOUND_IANA') {
-          this.setInfoMessage(`No registry RDAP server was identified for this domain.
-          Attempting lookup using WHOIS service.`);
+          this.setErrorMessage(`No registry RDAP server was identified for this domain.`);
 
-          this.displayCaptcha();
+          this.isWorkingInprogress = false;
         } else {
           // Last fallback
           this.setErrorMessage('The domain name entered is not valid');
@@ -168,18 +165,6 @@ export class LookupService {
     this.isCaptchaDisplayed = false;
   }
 
-  private displayCaptcha (): void {
-
-    this.isWorkingInprogress = false;
-
-    if(this.isDomainLookupDisabled()) {
-      this.setErrorMessage('Failed to perform lookup using WHOIS service: TLD_NOT_SUPPORTED.');
-      return;
-    }
-
-    this.recaptchaApiKey = this.apiService.recaptchaApiKey;
-    this.isCaptchaDisplayed = true;
-  }
 
   private setErrorMessage (message: string): void {
     if (message !== null && message !== undefined) {

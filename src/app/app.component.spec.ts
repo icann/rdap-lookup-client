@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { LookupDomainInformationComponent } from './lookup-response/lookup-domain-information/lookup-domain-information';
 import { LookupAuthoritativeServerComponent } from './lookup-response/lookup-authoritative-server/lookup-authoritative-server';
 import { LookupDnssecComponent } from './lookup-response/lookup-dnssec/lookup-dnssec';
@@ -50,8 +49,7 @@ describe('AppComponent', () => {
         MomentModule,
         BrowserAnimationsModule,
         MatExpansionModule,
-        HttpClientModule,
-        ReCaptchaModule,
+        HttpClientModule
       ],
       providers: [
         CookieService,

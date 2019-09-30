@@ -3,7 +3,6 @@ import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DomainFormComponent } from '../domain-form/domain-form.component';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
@@ -16,8 +15,7 @@ describe('HomeComponent', () => {
       imports: [
         HttpClientModule,
         FormsModule,
-        RouterTestingModule.withRoutes([{path: 'lookup', component: HomeComponent}]),
-        ReCaptchaModule
+        RouterTestingModule.withRoutes([{path: 'lookup', component: HomeComponent}])
       ]
     })
     .compileComponents();

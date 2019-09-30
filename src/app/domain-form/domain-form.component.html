@@ -22,24 +22,6 @@
   </div>
 </form>
 
-<div class="captcha-block small-12 medium-12" *ngIf="lookupService.isCaptchaDisplayed">
-  <div class="input-captcha lookup-info">
-    <div class="captcha">
-      <re-captcha site_key="{{lookupService.recaptchaApiKey}}" (captchaResponse)="handleCorrectCaptcha($event)"
-                  *ngIf="lookupService.recaptchaApiKey"></re-captcha>
-    </div>
-
-    <div>
-      By agreeing to proceed with a WHOIS failover lookup,
-      I acknowledge and agree that any personal data that I submit will be processed in accordance with the
-      ICANN <a href="https://www.icann.org/privacy/policy" target="_blank">Privacy Policy</a> and the website
-      <a href="https://www.icann.org/privacy/tos" target="_blank"><span class="text-nowrap">Terms of Service</span></a>.
-    </div>
-  </div>
-
-  <div class="lookup-btn-filler">
-  </div>
-</div>
 
 <div class="privacy-tos-block small-12 medium-12 " *ngIf="!lookupService.isCaptchaDisplayed">
   <div class="lookup-info">

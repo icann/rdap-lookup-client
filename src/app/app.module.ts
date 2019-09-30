@@ -26,7 +26,6 @@ import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { FaqComponent } from './faq/faq.component';
 import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -70,8 +69,7 @@ const appRoutes: Routes = [
     FormsModule,
     PrettyJsonModule,
     MomentModule,
-    MatExpansionModule,
-    ReCaptchaModule
+    MatExpansionModule
   ],
   providers: [ CookieService, LookupService ],
   bootstrap: [AppComponent]

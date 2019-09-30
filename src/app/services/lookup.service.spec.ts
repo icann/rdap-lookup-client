@@ -4,7 +4,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from '../home/home.component';
 import { DomainFormComponent } from '../domain-form/domain-form.component';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { LookupResponseComponent } from '../lookup-response/lookup-response.component';
 import { LookupDomainInformationComponent } from '../lookup-response/lookup-domain-information/lookup-domain-information';
 import { LookupAuthoritativeServerComponent } from '../lookup-response/lookup-authoritative-server/lookup-authoritative-server';
@@ -48,7 +47,6 @@ describe('LookupService', () => {
         RouterTestingModule.withRoutes(
           [{path: 'lookup', component: HomeComponent}, {path: '', component: DomainFormComponent}]
         ),
-        ReCaptchaModule,
         MatExpansionModule,
         MomentModule
       ]

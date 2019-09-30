@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DomainFormComponent } from './domain-form.component';
-import { ReCaptchaModule } from 'angular2-recaptcha';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LookupService } from '../services/lookup.service';
@@ -18,8 +17,7 @@ describe('DomainFormComponent without pre domain', () => {
       imports: [
         HttpClientModule,
         FormsModule,
-        RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}]),
-        ReCaptchaModule
+        RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}])
       ],
       providers: [
         LookupService
@@ -62,8 +60,7 @@ describe('DomainFormComponent with pre domain', () => {
       declarations: [ DomainFormComponent ],
       imports: [
         FormsModule,
-        RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}]),
-        ReCaptchaModule
+        RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}])
       ]
     })
     .compileComponents();
