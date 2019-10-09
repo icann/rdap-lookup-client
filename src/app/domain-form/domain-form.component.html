@@ -23,7 +23,7 @@
 </form>
 
 
-<div class="privacy-tos-block small-12 medium-12 " *ngIf="!lookupService.isCaptchaDisplayed">
+<div class="privacy-tos-block small-12 medium-12 ">
   <div class="lookup-info">
     By submitting any personal data, I acknowledge and agree that the personal data submitted by me will be processed in accordance with the ICANN
     <a href="https://www.icann.org/privacy/policy" target="_blank">Privacy Policy</a>, and agree to abide by the website
@@ -36,7 +36,7 @@
   </div>
 </div>
   
-<ng-container *ngIf="!lookupService.isCaptchaDisplayed">
+<ng-container>
   <div *ngFor="let message of lookupService.messages" [className]="message.type==messageTypes.Info ? 'notice alert cell large-6' : 'error alert cell large-6'">
     {{ message.message }}
   </div>

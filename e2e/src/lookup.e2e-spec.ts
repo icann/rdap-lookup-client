@@ -18,7 +18,6 @@ describe('LookupPage', () => {
 
   it('Domain not found in the dns.json file should return an error', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('domain.test-not-found');
@@ -29,7 +28,6 @@ describe('LookupPage', () => {
 
   it('Domain found should have a correct name', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domains = page.getDomainsList();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
@@ -41,7 +39,6 @@ describe('LookupPage', () => {
 
   it('com query should have a correct name', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('com');
@@ -52,7 +49,6 @@ describe('LookupPage', () => {
 
   it('.com query should have a correct name', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('.com');
@@ -63,7 +59,6 @@ describe('LookupPage', () => {
 
   it('Lookup should display remarks', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('proor.test');
@@ -76,7 +71,6 @@ describe('LookupPage', () => {
 
   it ('Dnssec toggle should not be visible at start', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('com');
@@ -90,7 +84,6 @@ describe('LookupPage', () => {
 
   it ('Dnssec should have a correct number', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('example-dnssec.test');
@@ -104,7 +97,6 @@ describe('LookupPage', () => {
 
   it ('Dnssec should be expanded properly after click', () => {
     home.navigateTo();
-    page.disableCaptcha();
     const domainForm = element(by.id('domain-form'));
     const domainInput = element(by.css('.input-domain'));
     domainInput.sendKeys('example-dnssec.test');

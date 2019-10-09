@@ -66,8 +66,6 @@ describe('LookupService', () => {
     expect(lookupService.messages.length).toBe(0);
     expect(lookupService.lookupResponse).toBe(null);
     expect(lookupService.isWorkingInprogress).toBe(true);
-    expect(lookupService.isCaptchaDisplayed).toBe(false);
-    expect(lookupService.recaptchaApiKey).toBe(null);
   });
 
   it ('setLookup should set params properly', () => {
@@ -76,8 +74,6 @@ describe('LookupService', () => {
     expect(lookupService.getDomain()).toBe('domain.com');
     expect(lookupService.lookupResponse).toBe(null);
     expect(lookupService.isWorkingInprogress).toBe(true);
-    expect(lookupService.isCaptchaDisplayed).toBe(false);
-    expect(lookupService.recaptchaApiKey).toBe(null);
   });
 
   it ('setLookup should add error if domain is not valid', () => {
@@ -153,16 +149,18 @@ describe('LookupService', () => {
     lookupService.cleanResponse();
     expect(lookupService.messages.length).toBe(0);
     expect(lookupService.lookupResponse).toBe(null);
-    expect(lookupService.isCaptchaDisplayed).toBe(false);
   });
 
   it ('sendrequest should display error for TLD_NOT_SUPPORTED', () => {
     spyOn(lookupService.apiService, 'fetchRDAPRequest').and.returnValue(throwError('NO_DOMAIN_FOUND_IANA'));
     spyOn(lookupService, 'isDomainLookupDisabled').and.returnValue(true);
     lookupService.setLookup('example.int', false);
-    expect(lookupService.getMessages().length).toBe(2);
-    expect(lookupService.getMessages()[0].message).toContain('Attempting lookup using WHOIS service.');
-    expect(lookupService.getMessages()[1].message).toContain('Failed to perform lookup using WHOIS service: TLD_NOT_SUPPORTED.');
+
+    console.log('lookupService.getMessages() = ', lookupService.getMessages());
+
+    expect(lookupService.getMessages().length).toBe(1);
+    expect(lookupService.getMessages()[0].message).toContain('No registry RDAP server was identified for this domain.');
+    // expect(lookupService.getMessages()[1].message).toContain('Failed to perform lookup using WHOIS service: TLD_NOT_SUPPORTED.');
   });
 
 });

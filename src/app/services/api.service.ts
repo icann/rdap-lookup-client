@@ -23,7 +23,6 @@ export class ApiService {
   private response: {};
   private rdapServer: string;
   public whoisFallbackEnabled = true;
-  public recaptchaApiKey: string = null;
   public domainsWhoisFallbackDisabled: Array<String> = [];
 
   constructor(private http: HttpClient) {  }
@@ -41,8 +40,6 @@ export class ApiService {
       if (configurationFile.whoisFallbackEnabled !== undefined && configurationFile.whoisFallbackEnabled !== null) {
         this.whoisFallbackEnabled = configurationFile.whoisFallbackEnabled;
       }
-
-      this.recaptchaApiKey = configurationFile.recaptchaApiKey;
 
       this.domainsWhoisFallbackDisabled = this.setDomainsWhoisFallbackDisabled(configurationFile.domainsWhoisFallbackDisabled);
 

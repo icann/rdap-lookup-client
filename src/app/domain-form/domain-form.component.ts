@@ -46,8 +46,4 @@ export class DomainFormComponent implements OnInit {
     }
   }
 
-  handleCorrectCaptcha (): void {
-    this.lookupService.sendWhoisFallBack();
-  }
-
 }

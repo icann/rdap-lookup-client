@@ -16,14 +16,6 @@ export class LookupPage {
     'videos.app'
   ];
 
-  disableCaptcha (): void {
-    browser.executeScript('return window.localStorage.setItem("CAPTCHA", "3");');
-  }
-
-  enableCaptcha  (): void {
-    browser.executeScript('return window.localStorage.removeItem("CAPTCHA");');
-  }
-
   getDomainsList () {
     return this.domainsList;
   }

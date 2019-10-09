@@ -19,16 +19,12 @@
       parse	and	display	registration	data in a human-friendly format.
       The	results	displayed	come	directly	from <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Registry Operators")'>registry operators</abbr>
       and/or <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Registrars")'>registrars</abbr>
-      in real-time. If	the	queried	information	is	not	available	in	RDAP,	the	query	will
-      be	redirected	to	whois.icann.org. This	process	is known as a	WHOIS	failover	lookup
-      which	occurs	when	queried	information	is	not	available	in RDAP	and	a	WHOIS	protocol
-      lookup	is	used	as	a	backup	operation	to	attempt	to	provide	available
-      registration data.
+      in real-time. 
     </p>
 
     <h2>What is the Registration Data Access Protocol (RDAP)?</h2>
     <p>
-      RDAP is a	computer network communications	protocol for	accessing	Domain Name	Registration Data	in a structured way. RDAP is	an alternative to	the	WHOIS	protocol and can be
+      RDAP is a	computer network communications	protocol for	accessing	Domain Name	Registration Data	in a structured way. RDAP can be
       used	to	look	up	relevant	registration data	from	such	Internet	resources	as	domain	names,	IP	addresses,	and	autonomous	system	numbers. In its basic form, RDAP	is not intended	to offer a
       "human-friendly"	view	of	the	data.	However,	its	structured	output does	enable	more	human-friendly services to be created.
     </p>
@@ -178,19 +174,6 @@
 
     <p>
       The raw	RDAP response	from the applicable	RDAP servers can also	be found at	the	bottom  of the results page	(minimized	by	default) for interested users to view.
-    </p>
-
-    <h2>
-      Can I Perform a WHOIS lookup?
-    </h2>
-    <p>
-        ICANN’s	prior	WHOIS	lookup	service	(whois.icann.org)	is	no	longer	available	and	now	redirects	to	this	Domain
-        Name	Registration	Data	Lookup,	which	utilizes	the	RDAP	service	of	registrars	and	registry	operators.	In	the
-        event	that	the	RDAP	lookup	fails	because	the	relevant	RDAP	service	is	unavailable,	you	will	be	prompted	with
-        a	captcha	request	to	optionally	perform	a	WHOIS	lookup.	If	you	opt-in	to	the	WHOIS	failover	lookup,	the	lookup
-        tool	will	return	results	from	the	relevant	WHOIS	service,	where	available.	The	Domain	Name	Registration	Data
-        Lookup	does	not	provide	a	WHOIS	service	lookup	capability	when	there	is	an	available	RDAP	service	for	the
-        relevant	domain	name.
     </p>
 
     <h2>

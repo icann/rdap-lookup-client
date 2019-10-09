@@ -63,32 +63,6 @@ form {
   }
 }
 
-.input-captcha {
-  display: flex;
-  margin: 10px 0;
-  font-size: 0.875rem;
-  text-align: justify;
-  @media (max-width: 1000px) {
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  > * {
-    @media (max-width: 1000px) {
-      flex-wrap: wrap;
-      padding: 0;
-      &:nth-child(1) {
-        padding-bottom: 10px;
-      }
-    }
-    @media (min-width: 1000px) {
-      &:not(:first-child) {
-        padding-left: 20px;
-        align-self: center;
-      }
-    }
-  }
-}
-
 .privacy-tos-block {
   display: flex;
   flex-basis: 100%;
@@ -102,11 +76,6 @@ form {
   }
 }
 
-.captcha-block {
-  display: flex;
-  flex-basis: 100%;
-}
-
 // The filler should occupy the same width as the Lookup button
 .lookup-btn-filler {
   padding: 10px 100px;
@@ -117,12 +86,6 @@ form {
     padding: 12px 0;
     margin: 10px 0 0;
   }
-}
-
-.captcha {
-  margin-top: 5px;
-  min-width: 304px;
-  min-height: 78px;
 }
 
 .alert {

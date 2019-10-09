@@ -16,8 +16,6 @@ export class LookupService {
   private readonly lookupUrl: string = '/lookup';
   public lookupResponse: any = null;
   public isWorkingInprogress = true;
-  public isCaptchaDisplayed = false;
-  public recaptchaApiKey: string = null;
 
   constructor (private router: Router, public apiService: ApiService, private whoisService: WhoisService) { }
 
@@ -42,8 +40,6 @@ export class LookupService {
     if (this.apiService.whoisFallbackEnabled === false) {
       return this.setErrorMessage(`Failed to perform lookup using ICANN WHOIS service: WHOIS fallback is deactivated.`);
     }
-
-    this.isCaptchaDisplayed = false;
 
     this.whoisService.sendWhoisRequest(this.domain)
       .subscribe(
@@ -162,7 +158,6 @@ export class LookupService {
     this.messages = [];
     this.domain = null;
     this.lookupResponse = null;
-    this.isCaptchaDisplayed = false;
   }
 
 
