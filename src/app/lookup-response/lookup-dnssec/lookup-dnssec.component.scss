@@ -1,0 +1,18 @@
+.dnssec-loop {
+  &:not(:first-of-type) {
+    padding-top: 25px;
+  }
+  > * {
+    display: flex;
+    flex-direction: row;
+    > div {
+      display: inline-block;
+      &:not(:first-child) {
+        word-break: break-all;
+      }
+      &:first-child {
+        white-space: nowrap;
+      }
+    }
+  }
+}

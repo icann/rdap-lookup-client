@@ -1,0 +1,23 @@
+<div class="information-panel" *ngIf="!isAuthoritativePanelEmpty()">
+    <h5 class="information-panel--heading"> Authoritative Servers </h5>
+    <div class="information-panel--body">
+      <ul class="item-list">
+        <li *ngIf="authoritativeServer.registryUrl">
+          <span class="item-line-title"> Registry Server URL: </span>
+          <span *ngIf="authoritativeServer.registryUrl" [innerHtml]="authoritativeServer.registryUrl | urlParser"></span>
+        </li>
+        <li *ngIf="authoritativeServer.isEventExists(authoritativeServer.events, 'last update of RDAP database')">
+          <span class="item-line-title"> Last updated from Registry RDAP DB: </span>
+          <span class="date">{{ getEventDate('last update of RDAP database', authoritativeServer.events) | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+        <li *ngIf="authoritativeServer.rdapRelatedLink">
+          <span class="item-line-title"> Registrar Server URL: </span>
+          <span  *ngIf="authoritativeServer.rdapRelatedLink" [innerHtml]="authoritativeServer.rdapRelatedLink | urlParser"></span>
+        </li>
+        <li *ngIf="authoritativeServer.isEventExists(authoritativeServer.registrarEvents, 'last update of RDAP database')">
+          <span class="item-line-title">Last updated from Registrar RDAP DB: </span>
+          <span class="date">{{ getEventDate('last update of RDAP database', authoritativeServer.registrarEvents) | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>

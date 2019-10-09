@@ -1,0 +1,170 @@
+{
+  "bridgeFile": {
+    "bootstrapUrl": "http://localhost:3001/dnsfile"
+  },
+  "dnsfile": {
+    "description": "RDAP bootstrap file for Domain Name System registrations",
+    "publication": "2018-10-30T18:00:06Z",
+    "services": [
+      [
+        [
+          "test-not-found"
+        ],
+        [
+          "http://localhost:3001/NOT_FOUND"
+        ]
+      ],
+      [
+        [
+          ""
+        ],
+        [
+          "http://localhost:3001/ext"
+        ]
+      ],
+      [
+        [
+          "test"
+        ],
+        [
+          "http://localhost:3001/"
+        ]
+      ]
+    ],
+    "version": "1.0"
+  },
+  "xn--f6q70qepc5a": {
+    "rdapConformance": [
+      "rdap_level_0"
+    ],
+    "objectClassName": "domain",
+    "handle": "9691",
+    "remarks": [
+      {
+        "description": [
+          "The object does not contain all data due to lack of authorization."
+        ],
+        "type": "object truncated due to authorization"
+      }
+    ],
+    "links": [
+      {
+        "value": "https://test.reddog.mx/rdap/domain/xn--f6q70qepc5a.test",
+        "rel": "self",
+        "href": "https://test.reddog.mx/rdap/domain/xn--f6q70qepc5a.test",
+        "type": "application/rdap+json"
+      }
+    ],
+    "events": [
+      {
+        "eventAction": "registration",
+        "eventActor": "9691",
+        "eventDate": "1996-03-18T02:26:00Z"
+      },
+      {
+        "eventAction": "expiration",
+        "eventActor": "X-9691",
+        "eventDate": "2020-04-04T23:03:11Z"
+      },
+      {
+        "eventAction": "last update of RDAP database",
+        "eventActor": "L-9691",
+        "eventDate": "2018-04-25T21:40:17Z"
+      }
+    ],
+    "status": [
+      "client hold",
+      "client transfer prohibited",
+      "client update prohibited"
+    ],
+    "lang": "en",
+    "ldhName": "xn--f6q70qepc5a.test",
+    "unicodeName": "大兵小將.test",
+    "nameservers": [
+      {
+        "objectClassName": "nameserver",
+        "handle": "9001",
+        "links": [
+          {
+            "value": "https://test.reddog.mx/rdap/nameserver/ns1.itrickortreat.test",
+            "rel": "self",
+            "href": "https://test.reddog.mx/rdap/nameserver/ns1.itrickortreat.test",
+            "type": "application/rdap+json"
+          }
+        ],
+        "status": [
+          "associated",
+          "client delete prohibited",
+          "client update prohibited",
+          "server update prohibited"
+        ],
+        "ldhName": "ns1.itrickortreat.test",
+        "ipAddresses": {
+          "v4": [
+            "230.230.179.154"
+          ]
+        }
+      },
+      {
+        "objectClassName": "nameserver",
+        "handle": "9002",
+        "links": [
+          {
+            "value": "https://test.reddog.mx/rdap/nameserver/ns2.itrickortreat.test",
+            "rel": "self",
+            "href": "https://test.reddog.mx/rdap/nameserver/ns2.itrickortreat.test",
+            "type": "application/rdap+json"
+          }
+        ],
+        "status": [
+          "associated",
+          "active",
+          "client delete prohibited",
+          "client update prohibited"
+        ],
+        "ldhName": "ns2.itrickortreat.test",
+        "ipAddresses": {
+          "v4": [
+            "65.36.31.164"
+          ]
+        }
+      },
+      {
+        "objectClassName": "nameserver",
+        "handle": "9003",
+        "links": [
+          {
+            "value": "https://test.reddog.mx/rdap/nameserver/ns3.itrickortreat.test",
+            "rel": "self",
+            "href": "https://test.reddog.mx/rdap/nameserver/ns3.itrickortreat.test",
+            "type": "application/rdap+json"
+          }
+        ],
+        "status": [
+          "associated",
+          "active",
+          "client delete prohibited",
+          "client update prohibited"
+        ],
+        "ldhName": "ns3.itrickortreat.test",
+        "ipAddresses": {
+          "v4": [
+            "96.216.79.220"
+          ]
+        }
+      }
+    ]
+  },
+  "proor": {
+    "rdapConformance":["rdap_level_0"],"objectClassName":"domain","handle":"9816","remarks":[{"description":["The object does not contain all data due to lack of authorization."],"type":"object truncated due to authorization"}],"links":[{"value":"http://localhost:3001/rr-proor","rel":"related","href":"http://localhost:3001/rr-proor","title":"Registrar RDAP link test","type":"application/rdap+json"},{"value":"https://test.reddog.mx/rdap/domain/proor.test","rel":"self","href":"https://test.reddog.mx/rdap/domain/proor.test","type":"application/rdap+json"}],"events":[{"eventAction":"registration","eventActor":"9816","eventDate":"1995-01-25T09:31:46Z"},{"eventAction":"expiration","eventActor":"X-9816","eventDate":"2012-01-12T02:18:38Z"},{"eventAction":"last update of RDAP database","eventActor":"L-9816","eventDate":"2018-04-25T21:40:17Z"}],"status":["inactive","client hold","client transfer prohibited"],"lang":"en","ldhName":"proor.test","nameservers":[{"objectClassName":"nameserver","handle":"9376","links":[{"value":"https://test.reddog.mx/rdap/nameserver/ns1.proor.test","rel":"self","href":"https://test.reddog.mx/rdap/nameserver/ns1.proor.test","type":"application/rdap+json"}],"status":["associated","client delete prohibited","client update prohibited","server delete prohibited"],"ldhName":"ns1.proor.test","ipAddresses":{"v4":["34.27.43.50"]}},{"objectClassName":"nameserver","handle":"9377","links":[{"value":"https://test.reddog.mx/rdap/nameserver/ns2.proor.test","rel":"self","href":"https://test.reddog.mx/rdap/nameserver/ns2.proor.test","type":"application/rdap+json"}],"status":["associated","client delete prohibited","client update prohibited","server update prohibited"],"ldhName":"ns2.proor.test","ipAddresses":{"v4":["25.76.218.9"]}},{"objectClassName":"nameserver","handle":"9378","links":[{"value":"https://test.reddog.mx/rdap/nameserver/ns3.proor.test","rel":"self","href":"https://test.reddog.mx/rdap/nameserver/ns3.proor.test","type":"application/rdap+json"}],"status":["associated","active","client update prohibited","server update prohibited"],"ldhName":"ns3.proor.test","ipAddresses":{"v4":["158.176.40.25"]}}]
+  },
+  "rr-proor": {
+    "objectClassName":"domain","handle":"D2347548-LROR","ldhName":"proor.test","nameservers":[{"objectClassName":"nameserver","ldhName":"ns.proor.test","status":["active"],"events":[{"eventAction":"last changed","eventDate":"2012-12-22T11:01:56.673Z"}]},{"objectClassName":"nameserver","ldhName":"A.IANA-SERVERS.NET","status":["active"],"events":[{"eventAction":"last changed","eventDate":"2012-12-22T11:01:56.677Z"}]},{"objectClassName":"nameserver","ldhName":"B.IANA-SERVERS.NET","status":["active"],"events":[{"eventAction":"last changed","eventDate":"2012-12-22T11:01:56.68Z"}]},{"objectClassName":"nameserver","ldhName":"C.IANA-SERVERS.NET","status":["active"],"events":[{"eventAction":"last changed","eventDate":"2012-12-22T11:01:56.68Z"}]}],"secureDNS":{"delegationSigned":true,"dsData":[{"keyTag":17248,"algorithm":7,"digest":"88151c40e4673e7023e6ad1902a8ae055f3ddf61","digestType":1,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:48.037Z"}]},{"keyTag":17248,"algorithm":7,"digest":"885cf8a6cf35fd5c619e1d48b59afb23063bba9fec52ff25f99094cba10910a2","digestType":2,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.99Z"}]},{"keyTag":18060,"algorithm":7,"digest":"04cf77a76fd328458005d2b35e416f209a3420a0","digestType":1,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.983Z"}]},{"keyTag":18060,"algorithm":7,"digest":"6be021818b9f10ed981a03acbf74f01e31fb15c58680ad0c4baa464bf37a7523","digestType":2,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.98Z"}]},{"keyTag":32134,"algorithm":7,"digest":"3d54d51109645e8315f59790b920323d361b065f","digestType":1,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.977Z"}]},{"keyTag":32134,"algorithm":7,"digest":"6c321409786b95beee60e6d42f3713acc3a9b5d18442091a792fbdd1ea8e4655","digestType":2,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.97Z"}]},{"keyTag":41334,"algorithm":7,"digest":"49d712cf7a8984b7545fdc7e69d7372782339b3a","digestType":1,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.967Z"}]},{"keyTag":41334,"algorithm":7,"digest":"c299faf7d6f9bcb310200ecf2ea216a2e83f7acb15c8d72d79641fa8dfacf9a9","digestType":2,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.963Z"}]},{"keyTag":41643,"algorithm":7,"digest":"93358db22e956a451eb5ae8d2ec39526ca6a87b9","digestType":1,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.96Z"}]},{"keyTag":41643,"algorithm":7,"digest":"b8ab67d895e62087f0c5fc5a1a941c67a18e4b096f6c622aefae30dd7b1ea199","digestType":2,"events":[{"eventAction":"last changed","eventDate":"2015-07-07T10:35:47.947Z"}]}]},"links":[{"value":"https://godaddyrdap.com/domain/proor.test","rel":"self","href":"https://godaddyrdap.com/domain/proor.test","type":"application/rdap+json"}],"entities":[{"objectClassName":"entity","handle":"CR12376439","vcardArray":["vcard",[["version",{},"text","4.0"],["kind",{},"text","individual"],["org",{"type":"work"},"text","ICANN"],["adr",{},"text",["","","","","California","","United States"]]]],"roles":["registrant"],"events":[{"eventAction":"last update","eventDate":"2012-07-12T14:57:00Z"}],"remarks":[{"title":"REDACTED FOR PRIVACY","type":"object truncated due to authorization","description":["Some of the data in this object has been removed."]}, {"title":"REDACTED FOR PRIVACY","type":"object truncated due to authorization 2","description":["Some of the data in this object has been removed."]}]},{"objectClassName":"entity","handle":"CR12376440","vcardArray":["vcard",[["version",{},"text","4.0"],["kind",{},"text","individual"],["org",{"type":"work"},"text","ICANN"],["adr",{},"text",["","","","","California","","United States"]]]],"roles":["technical"],"events":[{"eventAction":"last update","eventDate":"2012-07-12T14:57:00Z"}],"remarks":[{"title":"REDACTED FOR PRIVACY","type":"object truncated due to authorization","description":["Some of the data in this object has been removed."]}]},{"objectClassName":"entity","handle":"CR12376441","vcardArray":["vcard",[["version",{},"text","4.0"],["kind",{},"text","individual"],["org",{"type":"work"},"text","ICANN"],["adr",{},"text",["","","","","California","","United States"]]]],"roles":["administrative"],"events":[{"eventAction":"last update","eventDate":"2012-07-12T14:57:00Z"}],"remarks":[{"title":"REDACTED FOR PRIVACY","type":"object truncated due to authorization","description":["Some of the data in this object has been removed."]}]},{"objectClassName":"entity","handle":"CR12376442","vcardArray":["vcard",[["version",{},"text","4.0"],["kind",{},"text","individual"],["org",{"type":"work"},"text","ICANN"],["adr",{},"text",["","","","","California","","United States"]]]],"roles":["billing"],"events":[{"eventAction":"last update","eventDate":"2012-07-12T14:57:01Z"}],"remarks":[{"title":"REDACTED FOR PRIVACY","type":"object truncated due to authorization","description":["Some of the data in this object has been removed."]}]},{"objectClassName":"entity","handle":"","vcardArray":["vcard",[["version",{},"text","4.0"],["fn",{},"text","GoDaddy.com, LLC"],["adr",{},"text",["","","14455 N Hayden Suite 226","Scottsdale","AZ","85260","US"]],["email",{"type":"work"},"text","Reg_Routine@godaddy.com"]]],"roles":["registrar"],"publicIds":[{"type":"IANA Registrar ID","identifier":"146"}],"entities":[{"objectClassName":"","handle":"","vcardArray":["vcard",[["version",{},"text","4.0"],["phone",{"type":["voice"]},"uri","tel:480-624-2505"],["email",{"type":"work"},"text","abuse@godaddy.com"]]],"roles":["abuse"]}],"rdapConformance":["rdap_level_0"],"port43":"whois.godaddy.com"}],"events":[{"eventAction":"last update of RDAP database","eventDate":"2019-04-24T19:51:58.825360222Z"},{"eventAction":"expiration","eventDate":"2027-12-07T17:04:26Z"},{"eventAction":"registration","eventDate":"1998-09-14T04:00:00Z"},{"eventAction":"last update","eventDate":"2017-12-08T02:27:22Z"}],"status":["delete prohibited","transfer prohibited","renew prohibited","update prohibited"],"notices":[{"title":"Epp Status Codes","description":["For more information on domain status codes, please visit https://icann.org/epp."],"links":[{"value":"https://icann.org/epp","rel":"related","href":"https://icann.org/epp","type":"text/html"}]},{"title":"Whois Inaccuracy Complaint Form","description":["URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf."],"links":[{"value":"https://www.icann.org/wicf","rel":"related","href":"https://www.icann.org/wicf","type":"text/html"}]},{"title":"Terms of Use","description":["By submitting an inquiry, you agree to these Universal Terms of Service","and limitations of warranty. In particular, you agree not to use this","data to allow, enable, or otherwise make possible, dissemination or","collection of this data, in part or in its entirety, for any purpose,","such as the transmission of unsolicited advertising and solicitations of","any kind, including spam. You further agree not to use this data to enable","high volume, automated or robotic electronic processes designed to collect","or compile this data for any purpose, including mining this data for your","own personal or commercial purposes, or use this data in any way that violates","applicable laws and regulations."],"links":[{"value":"https://www.godaddy.com/agreements/showdoc?pageid=5403","rel":"related","href":"https://www.godaddy.com/agreements/showdoc?pageid=5403","type":"text/html"}]}],"rdapConformance":["rdap_level_0"],"port43":"whois.godaddy.com"
+  },
+  "com": {
+    "ldhName": "com", "secureDNS": {"delegationSigned": false}
+  },
+  "example-dnssec": {
+    "objectClassName": "domain", "port43": "whois.verisign-grs.com", "notices": [{"description": ["Service subject to Terms of Use."], "links": [{"rel": "related", "href": "http://rdap-pilot.verisignlabs.com/terms_of_use", "type": "text/html", "value": "http://rdap-pilot.verisignlabs.com/terms_of_use"}], "title": "Terms of Use"}, {"description": ["For more information on domain status codes, please visit https://icann.org/epp."], "links": [{"rel": "related", "href": "https://icann.org/epp", "type": "text/html", "value": "https://icann.org/epp"}], "title": "EPP Status Codes"}, {"description": ["URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf."], "links": [{"rel": "related", "href": "https://www.icann.org/wicf", "type": "text/html", "value": "https://www.icann.org/wicf"}], "title": "Whois Inaccuracy Complaint Form"}],"nameservers": [{"objectClassName": "nameserver", "port43": "whois.verisign-grs.com", "handle": "51886707-VRSN", "ipAddresses": {"v6": ["2001:500:8D:0:0:0:0:53"], "v4": ["199.43.133.53"]}, "links": [{"rel": "self", "href": "https://rdap-pilot.verisignlabs.com/rdap/v1/nameserver/B.IANA-SERVERS.NET", "type": "application/rdap+json", "value": "https://rdap-pilot.verisignlabs.com/rdap/v1/nameserver/B.IANA-SERVERS.NET"}],"lang": "en-US","events": [{  "eventAction": "registration",  "eventDate": "2001-11-21T10:05:42Z"}, {"eventAction": "last changed",  "eventDate": "2011-06-10T14:21:55Z"}],"ldhName": "B.IANA-SERVERS.NET","status": ["active"]},{"objectClassName": "nameserver","port43": "whois.verisign-grs.com","handle": "51886705-VRSN","ipAddresses": {"v6": ["2001:500:8F:0:0:0:0:53"],"v4": [  "199.43.135.53"]},"links": [{  "rel": "self",  "href": "https://rdap-pilot.verisignlabs.com/rdap/v1/nameserver/A.IANA-SERVERS.NET",  "type": "application/rdap+json",  "value": "https://rdap-pilot.verisignlabs.com/rdap/v1/nameserver/A.IANA-SERVERS.NET"}],"lang": "en-US","events": [{  "eventAction": "registration",  "eventDate": "2001-11-21T10:05:31Z"},{  "eventAction": "last changed",  "eventDate": "2016-04-14T11:24:27Z"}],"ldhName": "A.IANA-SERVERS.NET","status": ["active"]}],"rdapConformance": ["rdap_level_0","rdap_objectTag_level_0","rdap_openidc_level_0"],"handle": "2336799-VRSN","links": [{"rel": "self","href": "https://rdap-pilot.verisignlabs.com/rdap/v1/domain/EXAMPLE.COM","type": "application/rdap+json","value": "https://rdap-pilot.verisignlabs.com/rdap/v1/domain/EXAMPLE.COM"}],"secureDNS": {"dsData": [{"keyTag": 31589,"digestType": 1,"digest": "3490A6806D47F17A34C29E2CE80E8A999FFBE4BE","algorithm": 8},{"keyTag": 31589,"digestType": 2,"digest": "CDE0D742D6998AA554A92D890F8184C698CFAC8A26FA59875A990C03E576343C","algorithm": 8},{"keyTag": 43547,"digestType": 1,"digest": "B6225AB2CC613E0DCA7962BDC2342EA4F1B56083","algorithm": 8},{"keyTag": 43547,"digestType": 2,"digest": "615A64233543F66F44D68933625B17497C89A70E858ED76A2145997EDF96A918","algorithm": 8},{"keyTag": 31406,"digestType": 1,"digest": "189968811E6EBA862DD6C209F75623D8D9ED9142","algorithm": 8},{"keyTag": 31406,"digestType": 2,"digest": "F78CF3344F72137235098ECBBD08947C2C9001C7F6A085A17F518B5D8F6B916D","algorithm": 8}],"delegationSigned": true},"lang": "en-US","events": [{"eventAction": "registration","eventDate": "1995-08-14T00:00:00Z"},{"eventAction": "last changed","eventDate": "2018-08-14T03:14:12Z"},{"eventAction": "expiration","eventDate": "2019-08-13T00:00:00Z"}],"ldhName": "example-dnssec.test", "status": ["client delete prohibited","client transfer prohibited","client update prohibited"]
+  }
+}

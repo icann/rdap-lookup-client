@@ -1,0 +1,37 @@
+@import '../../assets/scss/variables/variables';
+
+.cookie-notification {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0 18px;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+  background: $color-grey-softer;
+  border-top: 1px solid $color-grey-soft;
+  line-height: 1.6;
+  font-weight: 400;
+  max-height: 9999px;
+  z-index: 9998;
+  font-size: 14px;
+
+  .dismiss-button {
+    background: $color-grey-blue;
+    border-radius: 4px;
+    padding: 3px 6px 3px;
+    margin-left: 5px;
+    border: 1px solid $color-blue-soft;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    color: $color-black;
+    text-decoration: none;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .grid-container {
+    max-width: 989px;
+  }
+}

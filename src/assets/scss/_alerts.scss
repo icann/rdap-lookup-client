@@ -1,0 +1,21 @@
+.alert {
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 0 1 #000;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  flex: 100%;
+  max-width: 100%;
+  &.error {
+    background-color: $color-white;
+    color: $color-error;
+    border: 1px $color-error solid;
+  }
+  &.notice {
+    background-color: $color-white;
+    color: $color-notice;
+    border: 1px $color-notice solid;
+  }
+}

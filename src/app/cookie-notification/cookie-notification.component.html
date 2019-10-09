@@ -1,0 +1,19 @@
+<div *ngIf="showNotification()" class="cookie-notification">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell small-12">
+        <h4>A note about our privacy policies and terms of service:</h4>
+        <p>We have updated our privacy policies and certain website terms of service to provide greater transparency, promote simplification, and align with recent changes in privacy laws applicable to us.
+          <a target="_blank" href="https://www.icann.org/privacy">Learn more</a>.
+        </p>
+        This site uses cookies to deliver an efficient user experience and to help us see how the site is used.
+        <a href="https://www.icann.org/privacy/cookies" target="_blank">Learn more.</a>
+        <span tabindex="0" class="dismiss-button"
+              (click)="onDismissNotifcation()"
+              (keypress)="onDismissNotifcation($event.keyCode)">
+        <i class="close-icon fa fa-times disposable-message" aria-hidden="true"></i>Ok
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

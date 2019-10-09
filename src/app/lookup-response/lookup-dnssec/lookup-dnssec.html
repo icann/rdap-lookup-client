@@ -1,0 +1,109 @@
+<div class="information-panel" *ngIf="dnsSec.isDnssecPanelVisibled">
+    <h5 class="information-panel--heading flex">
+      DNSSEC Information
+      <span class="view-more" (click)="toggleDnssecPanel()" *ngIf="isDnssecReduced&&!isDnssecPanelExpanded">[+ more]</span>
+      <span class="view-more" (click)="toggleDnssecPanel()" *ngIf="isDnssecReduced&&isDnssecPanelExpanded">[- less]</span>
+    </h5>
+
+    <div class="information-panel--body dnssec" [ngClass]="{'expanded': isDnssecPanelExpanded}"
+    #dnssecPanel>
+      <ul class="item-list">
+        <li *ngIf="dnsSec.maxSigLife">
+          <span class="item-line-title"> Max sig life: </span>
+          <span *ngIf="dnsSec.maxSigLife" [innerHtml]="dnsSec.maxSigLife"></span>
+        </li>
+        <li *ngIf="dnsSec.zoneSigned">
+          <span class="item-line-title"> Zone Signed: </span>
+          <span *ngIf="dnsSec.zoneSigned" [innerHtml]="dnsSec.zoneSigned"></span>
+        </li>
+        <li>
+          <span class="item-line-title"> Delegation Signed: </span>
+          <span class="first-letter-capitalize delegation-signed" *ngIf="dnsSec.delegation" [innerHtml]="dnsSec.delegation"></span>
+        </li>
+        <li *ngIf="dnsSec.dsdata.length>0">
+          <span class="item-line-title"> Delegation Signer Data: </span>
+        </li>
+      </ul>
+
+      <div class="dnssec-loop" *ngFor="let dsdata of dnsSec.dsdataDisplayed">
+        <div>
+          <div>
+            Key Tag: &nbsp;
+          </div>
+          <div>
+            {{ dsdata.keyTag }}
+          </div>
+        </div>
+        <div>
+          <div>
+            Algorigthm: &nbsp;
+          </div>
+          <div>
+            {{ dsdata.algorithm }}
+          </div>
+        </div>
+        <div>
+          <div>
+            Digest Type: &nbsp;
+          </div>
+          <div>
+            {{ dsdata.digestType }}
+          </div>
+        </div>
+        <div>
+          <div>
+            Digest: &nbsp;
+          </div>
+          <div>
+            {{ dsdata.digest }}
+          </div>
+        </div>
+      </div>
+
+      <ul class="item-list">
+        <li *ngIf="dnsSec.keyData.length>0">
+          <span class="item-line-title"> Key Data: </span>
+        </li>
+      </ul>
+      <div class="dnssec-loop" *ngFor="let keydata of dnsSec.keyData">
+        <div>
+          <div>
+              Algorigthm: &nbsp;
+            </div>
+          <div>
+              {{ keydata.algorithm }}
+            </div>
+        </div>
+        <div>
+          <div>
+            Flags: &nbsp;
+          </div>
+          <div>
+            {{ keydata.flags }}
+          </div>
+        </div>
+        <div>
+          <div>
+            Protocol: &nbsp;
+          </div>
+          <div>
+              {{ keydata.protocol }}
+          </div>
+        </div>
+        <div>
+          <div>
+            Public Key: &nbsp;
+          </div>
+          <div>
+            {{ keydata.publicKey }}
+          </div>
+        </div>
+      </div>
+      <p>
+        <span class="remarks" *ngFor="let remark of dnsSec.remarks">
+          {{ remark.title }}:
+          {{ remark.description[0] }}
+        </span>
+      </p>
+    </div>
+  </div>

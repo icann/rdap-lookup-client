@@ -1,0 +1,16 @@
+<div class="acronym" *ngIf="isAcronymVisible()">
+  <div class="row">
+      <div class="acronym--title">
+        <span class="glossary-image">
+          <img src="../../assets/images/glossary_logo.png" width="16px">
+        </span>
+        <span class="glossary-name">
+          Glossary:
+        </span>
+        {{ getAcronymName() }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="acronym--definition" [innerHTML]="getAcronymDescription()"></div>
+  </div>
+</div>
