@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ilc-browser",
+            "outputPath": "dist/icann-lookup-client-browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -46,14 +46,6 @@
               "vendorChunk": false,
               "buildOptimizer": true
             },
-            "local": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local.ts"
-                }
-              ]
-            },
             "test": {
               "fileReplacements": [
                 {
@@ -72,9 +64,6 @@
           "configurations": {
             "production": {
               "browserTarget": "icann-lookup-client:build:production"
-            },
-            "local": {
-              "browserTarget": "icann-lookup-client:build:local"
             },
             "test": {
               "browserTarget": "icann-lookup-client:build:test"
@@ -118,7 +107,7 @@
         }
       }
     },
-    "ilc-e2e": {
+    "icann-lookup-client-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
