@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "icann-rdap-client": {
+    "icann-lookup-client": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -67,24 +67,24 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "icann-rdap-client:build"
+            "browserTarget": "icann-lookup-client:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "icann-rdap-client:build:production"
+              "browserTarget": "icann-lookup-client:build:production"
             },
             "local": {
-              "browserTarget": "icann-rdap-client:build:local"
+              "browserTarget": "icann-lookup-client:build:local"
             },
             "test": {
-              "browserTarget": "icann-rdap-client:build:test"
+              "browserTarget": "icann-lookup-client:build:test"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "icann-rdap-client:build"
+            "browserTarget": "icann-lookup-client:build"
           }
         },
         "test": {
@@ -118,7 +118,7 @@
         }
       }
     },
-    "rwc-e2e": {
+    "ilc-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -126,14 +126,14 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "icann-rdap-client:serve:test"
+            "devServerTarget": "icann-lookup-client:serve:test"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "icann-rdap-client:build:test"
+              "devServerTarget": "icann-lookup-client:build:test"
             },
             "test": {
-              "devServerTarget": "icann-rdap-client:build:test"
+              "devServerTarget": "icann-lookup-client:build:test"
             }
           }
         },
