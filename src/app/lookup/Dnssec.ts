@@ -10,14 +10,10 @@ export class DnsSec extends LookupInformation {
   zoneSigned: string;
   isDnssecPanelVisibled = true;
 
-  constructor (response: any, isWhoisFallback = false) {
-    super(response, isWhoisFallback);
+  constructor (response: any) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.parseFromRdapResponse(response);
-    } else {
-      this.parseFromWhoisResponse(response);
-    }
+    this.parseFromRdapResponse(response);
   }
 
   private isDnsSecEnabled (rdapResponse): boolean {
@@ -50,17 +46,6 @@ export class DnsSec extends LookupInformation {
     // Hide dnssec panel if we don't have the data
     if (response.secureDNS === undefined || response.secureDNS === null) {
      this.isDnssecPanelVisibled = false;
-    } else {
-      this.isDnssecPanelVisibled = true;
-    }
-  }
-
-  private parseFromWhoisResponse (response: any): void {
-    // Hide dnssec panel if we don't have the data
-    this.delegation = (response.dnssec) ? response.dnssec : 'Unsigned';
-
-    if (response.dnssec === undefined || response.dnssec === null) {
-      this.isDnssecPanelVisibled = false;
     } else {
       this.isDnssecPanelVisibled = true;
     }

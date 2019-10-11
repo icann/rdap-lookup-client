@@ -62,10 +62,10 @@ export class Response {
         }
 
         if (!element.roles) {
-          this.entities.push(new Entity(element, false, element.role[0]));
+          this.entities.push(new Entity(element, element.role[0]));
         } else {
           element.roles.forEach ((role: any) => {
-            this.entities.push(new Entity(element, false, role));
+            this.entities.push(new Entity(element, role));
           });
         }
       });

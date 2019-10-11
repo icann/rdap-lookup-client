@@ -27,10 +27,6 @@ describe('LookupResponseComponent', () => {
     const response = new LookupResponse(rdapValidSecureDns);
     expect(response.dnsSec.delegation).toBe('Signed');
   });
-  it ('Valid RdapResponse should not set whoisResponse fallback', () => {
-    const rdapResponse = new LookupResponse(validRdapResponse);
-    expect(rdapResponse.whoisRawResponse).toBe(undefined);
-  });
   it ('ParseDomainStatus should return empty array for empty status', () => {
     const response = new LookupResponse(incompleteRdapResponse);
     expect(response.domainInformation.domainStatus.length).toBe(0);

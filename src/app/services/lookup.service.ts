@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LookupResponse } from '../lookup/lookup-response';
 import { ApiService } from './api.service';
-import { WhoisService } from './whois.service';
 
 export enum MessageTypes { Error = 0, Info = 1 }
 
@@ -17,7 +16,7 @@ export class LookupService {
   public lookupResponse: any = null;
   public isWorkingInprogress = true;
 
-  constructor (private router: Router, public apiService: ApiService, private whoisService: WhoisService) { }
+  constructor (private router: Router, public apiService: ApiService) { }
 
   public setLookup (domain: string, isRedirectedResponse: boolean = true): void {
     this.cleanResponse();
@@ -30,36 +29,6 @@ export class LookupService {
     } else {
       this.sendRequest();
     }
-  }
-
-  sendWhoisFallBack (): void {
-    this.isWorkingInprogress = true;
-
-    // Disable whois fallback for all requests
-    // Based on the config file
-    if (this.apiService.whoisFallbackEnabled === false) {
-      return this.setErrorMessage(`Failed to perform lookup using ICANN WHOIS service: WHOIS fallback is deactivated.`);
-    }
-
-    this.whoisService.sendWhoisRequest(this.domain)
-      .subscribe(
-        (whoisResponse) => {
-          // Define response
-          this.lookupResponse = new LookupResponse(whoisResponse, true);
-          this.isWorkingInprogress = false;
-        },
-        (e) => {
-          if (e.error && e.error.message) {
-            if (e.error.message === 'DOMAIN_NOT_FOUND') {
-              this.setInfoMessage(`The requested domain was not found in the Registry or Registrar’s WHOIS server.`);
-            } else {
-              this.setErrorMessage(`Failed to perform lookup using WHOIS service: ${e.error.message}.`);
-            }
-          } else {
-            this.setErrorMessage(`Failed to perform lookup using WHOIS service.`);
-          }
-          this.isWorkingInprogress = false;
-        });
   }
 
   public getDomain (): string {
@@ -125,7 +94,7 @@ export class LookupService {
 
           this.isWorkingInprogress = false;
         } else {
-          // Last fallback
+          // Last handle
           this.setErrorMessage('The domain name entered is not valid');
           this.isWorkingInprogress = false;
         }
@@ -144,7 +113,7 @@ export class LookupService {
         (res: any) => {
           if (res) {
             const rdapObject = {response: res};
-            this.lookupResponse = new LookupResponse(rdapObject, false, this.lookupResponse);
+            this.lookupResponse = new LookupResponse(rdapObject, this.lookupResponse);
           }
         },
         () => {
@@ -185,9 +154,6 @@ export class LookupService {
   isDomainLookupDisabled (): Boolean {
     const domainPart = this.apiService.domain.parts.reverse();
     for (const _value of Object.keys(this.apiService.domain.parts)) {
-      if (this.apiService.domainsWhoisFallbackDisabled.includes(domainPart.join('.'))) {
-        return true;
-      }
 
       domainPart.splice(0, 1);
     }

@@ -29,12 +29,7 @@ export class Entity {
   notDisplayedRoles: Array<String> = ['registrar', 'registrant', 'technical', 'administrative', 'reseller'];
   remarks: Array<Object> = [];
 
-  constructor (entity: any, whoisFallback = false, role = null) {
-    if (whoisFallback) {
-      this.parseEntityFromWhois(entity, role);
-      return;
-    }
-
+  constructor (entity: any, role = null) {
     const vcard = (entity.vcardArray) ? entity.vcardArray[1] : [];
     const name = vcard.find((el) => el.includes('fn'));
     const org = vcard.find((el) => el.includes('org') && Array.isArray(el) && el[0] !== 'kind');

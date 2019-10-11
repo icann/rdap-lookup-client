@@ -5,14 +5,10 @@ export class Reseller extends LookupInformation {
 
   entityReseller: Entity = new Entity({});
 
-  constructor (response: any, isWhoisFallback = false) {
-    super(response, isWhoisFallback);
+  constructor (response: any) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.entityReseller = response.entities.find((el) => el.role === 'reseller') || new Entity({});
-    } else {
-      this.entityReseller = new Entity(response.reseller, true, 'reseller');
-    }
+    this.entityReseller = response.entities.find((el) => el.role === 'reseller') || new Entity({});
   }
 
 }

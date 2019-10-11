@@ -4,12 +4,10 @@ export class AuthoritativeServer extends LookupInformation {
   registryUrl: string;
   rdapRelatedLink: string;
 
-  constructor (response: any, isWhoisFallback = false, mergeRegistrarInformations = null) {
-    super(response, isWhoisFallback);
+  constructor (response: any, mergeRegistrarInformations = null) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.parseFromRdapResponse(response, mergeRegistrarInformations);
-    }
+    this.parseFromRdapResponse(response, mergeRegistrarInformations);
   }
 
   parseFromRdapResponse (rdapResponse: any, mergeRegistrarInformations: any): void {

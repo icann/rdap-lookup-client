@@ -11,20 +11,11 @@ export class LookupInformation {
   whoisRawResponse: {};
   rdapEvents: Event[] = [];
 
-  constructor (response: any, isWhoisFallback = false) {
+  constructor (response: any) {
     this.rdapResponse = response;
     this.entitiesRemarks = this.parseRemarks(response.remarks || []);
     this.registrarEvents = response.registrarEvents;
-    if (isWhoisFallback) {
-      this.events = [];
-      this.events.push(
-        {'eventAction': 'expiration', 'eventDate': response.registryExpiryDate},
-        {'eventAction': 'last changed', 'eventDate': response.updatedDate},
-        {'eventAction': 'registration', 'eventDate': response.creationDate},
-      );
-    } else {
-      this.events = response.events;
-    }
+    this.events = response.events;
   }
 
   private parseRemarks (remarks: []): any {

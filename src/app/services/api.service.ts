@@ -22,8 +22,6 @@ export class ApiService {
   public domain: {parts: string[], domain: string};
   private response: {};
   private rdapServer: string;
-  public whoisFallbackEnabled = true;
-  public domainsWhoisFallbackDisabled: Array<String> = [];
 
   constructor(private http: HttpClient) {  }
 
@@ -37,18 +35,8 @@ export class ApiService {
         return throwError('INVALID_BOOTSTRAP_FILE');
       }
 
-      if (configurationFile.whoisFallbackEnabled !== undefined && configurationFile.whoisFallbackEnabled !== null) {
-        this.whoisFallbackEnabled = configurationFile.whoisFallbackEnabled;
-      }
-
-      this.domainsWhoisFallbackDisabled = this.setDomainsWhoisFallbackDisabled(configurationFile.domainsWhoisFallbackDisabled);
-
       return this.http.get(configurationFile.bootstrapUrl);
     }));
-  }
-
-  setDomainsWhoisFallbackDisabled (domain: string): Array<String> {
-    return (domain) ? domain.split(',') : [];
   }
 
   fetchRelatedLink (link: string): Observable<any> {
