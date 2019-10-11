@@ -19,12 +19,6 @@ describe('ApiService', () => {
 
   afterEach(() => {
     apiService.rdapServersUrl = 'http://localhost:9876/assets/static/dns.json';
-    apiService.whoisBackendUrl = 'http://localhost:8989/api/whois?q=';
-  });
-
-  it('fetchWhoisRequest should return an observable', () => {
-    spyOn(apiService, 'fetchWhoisRequest').and.returnValue(of());
-    expect(apiService.fetchWhoisRequest('domain.com') instanceof Observable).toBe(true, 'instance of Observable');
   });
 
   it('fetchRelatedLink should return null when link is not given', () => {

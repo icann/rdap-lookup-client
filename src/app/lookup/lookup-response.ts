@@ -19,7 +19,6 @@ export class LookupResponse {
   mergeRegistrarInformations: any;
   registrarResponse: object;
   response: object;
-  whoisRawResponse: object;
   nonParsedResponse: object;
 
   public constructor (rdapResponse, mergeRegistrarInformations = null) {

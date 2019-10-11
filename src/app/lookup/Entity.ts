@@ -130,24 +130,4 @@ export class Entity {
     }
   }
 
-  parseEntityFromWhois (entity: any, role: string) {
-    if (!entity) {
-      return;
-    }
-
-    this.email = entity.email;
-    this.ianaId = entity.registrarIANAID;
-    this.abuseEmail = entity.registrarAbuseContactEmail;
-    this.abusePhone = (!entity.registrarAbuseContactPhone) ? null : entity.registrarAbuseContactPhone.number;
-    this.phone = (!entity.phone) ? null : entity.phone.number;
-    this.fax = (!entity.fax) ? null : entity.fax.number;
-    this.legalRepresentative = entity.name;
-    this.fn = entity.organization || entity.registrar;
-    this.street = entity.street;
-    this.country = entity.country;
-    this.role = role;
-    this.stateProvince = entity.state_province;
-    this.postalCode = entity.postalCode;
-    this.mailingAddress = `${this.street || ''} ${this.stateProvince || ''} ${this.postalCode || ''} ${this.country || ''}`.trim();
-  }
 }

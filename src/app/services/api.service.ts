@@ -16,7 +16,6 @@ const httpOptions = {
 })
 export class ApiService {
   public rdapServersUrl = environment.dnsFileUrl;
-  public whoisBackendUrl = environment.whoisBackendUrl;
   private isRdapServerInjected = false;
   private rdapServers: Array<object> = [];
   public domain: {parts: string[], domain: string};
@@ -24,10 +23,6 @@ export class ApiService {
   private rdapServer: string;
 
   constructor(private http: HttpClient) {  }
-
-  fetchWhoisRequest (domain): Observable<any> {
-    return this.http.get(`${this.whoisBackendUrl}${domain}`);
-  }
 
   getApplicationConfigurationFile (): Observable <any> {
     return this.http.get(this.rdapServersUrl).pipe(mergeMap((configurationFile: any) => {

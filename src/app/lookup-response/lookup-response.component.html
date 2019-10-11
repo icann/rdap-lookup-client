@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="row hide-for-small-only" *ngIf="lookupService.lookupResponse&&(lookupService.lookupResponse.rdapResponse||lookupService.lookupResponse.whoisRawResponse||lookupService.lookupResponse.registrarResponse)">
+      <div class="row hide-for-small-only" *ngIf="lookupService.lookupResponse&&(lookupService.lookupResponse.rdapResponse||lookupService.lookupResponse.registrarResponse)">
           <div class="medium-12 columns spacer"> <hr /> </div>
         </div>
 
@@ -63,16 +63,6 @@
 
                   </mat-expansion-panel>
 
-                  <mat-expansion-panel class="accordion" *ngIf="lookupService.lookupResponse&&lookupService.lookupResponse.whoisRawResponse">
-                    <mat-expansion-panel-header class="panel-header">
-                      <mat-panel-title>
-                        Raw WHOIS 43 Response
-                      </mat-panel-title>
-                    </mat-expansion-panel-header>
-
-                    <pre [innerHtml]="lookupService.lookupResponse.whoisRawResponse" class="whois"></pre>
-
-                    </mat-expansion-panel>
                   </mat-accordion>
               </div>
   </div>

@@ -149,7 +149,6 @@ describe('LookupService', () => {
 
     expect(lookupService.getMessages().length).toBe(1);
     expect(lookupService.getMessages()[0].message).toContain('No registry RDAP server was identified for this domain.');
-    // expect(lookupService.getMessages()[1].message).toContain('Failed to perform lookup using WHOIS service: TLD_NOT_SUPPORTED.');
   });
 
 });

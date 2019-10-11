@@ -125,9 +125,6 @@ pre {
   white-space: pre;
   width: 100%;
   word-break: break-all;
-  &.whois {
-    white-space: pre-wrap;
-  }
   .string {
     color: $color-black;
     white-space: pre-line;

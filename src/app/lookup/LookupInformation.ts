@@ -8,7 +8,6 @@ export class LookupInformation {
   registrarEvents: Array<Event> = [];
   rdapResponse: {};
   registrarResponse: {};
-  whoisRawResponse: {};
   rdapEvents: Event[] = [];
 
   constructor (response: any) {
