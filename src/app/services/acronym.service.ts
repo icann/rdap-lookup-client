@@ -67,8 +67,7 @@ export class AcronymService {
           names. During the registration process, a registrar verifies that the requested domain
           name meets registry requirements, and submits the name to the appropriate registry
           operator. Registrars are also responsible for collecting required information from
-          registrants and making the information available through WHOIS. After registration,
-          registrants can make updates to their domain name settings through their registrars.
+          registrants. After registration, registrants can make updates to their domain name settings through their registrars.
           </p>
 
           <p>A registrar that has entered into a Registrar Accreditation Agreement with ICANN is
