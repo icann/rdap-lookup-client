@@ -19,19 +19,6 @@ describe('ApiService', () => {
 
   afterEach(() => {
     apiService.rdapServersUrl = 'http://localhost:9876/assets/static/dns.json';
-    apiService.whoisBackendUrl = 'http://localhost:8989/api/whois?q=';
-  });
-
-  it('fetchWhoisRequest should return an observable', () => {
-    spyOn(apiService, 'fetchWhoisRequest').and.returnValue(of());
-    expect(apiService.fetchWhoisRequest('domain.com') instanceof Observable).toBe(true, 'instance of Observable');
-  });
-
-  it('fetchWhoisRequest should GET the domain', () => {
-    apiService.whoisBackendUrl = 'http://localhost:3001/whois/query?q=';
-    apiService.fetchWhoisRequest('domain.com').subscribe(() => {});
-    const req = httpMock.expectOne(`http://localhost:3001/whois/query?q=domain.com`, 'call to whois fallback backend');
-    expect(req.request.method).toBe('GET');
   });
 
   it('fetchRelatedLink should return null when link is not given', () => {

@@ -29,12 +29,7 @@ export class Entity {
   notDisplayedRoles: Array<String> = ['registrar', 'registrant', 'technical', 'administrative', 'reseller'];
   remarks: Array<Object> = [];
 
-  constructor (entity: any, whoisFallback = false, role = null) {
-    if (whoisFallback) {
-      this.parseEntityFromWhois(entity, role);
-      return;
-    }
-
+  constructor (entity: any, role = null) {
     const vcard = (entity.vcardArray) ? entity.vcardArray[1] : [];
     const name = vcard.find((el) => el.includes('fn'));
     const org = vcard.find((el) => el.includes('org') && Array.isArray(el) && el[0] !== 'kind');
@@ -135,24 +130,4 @@ export class Entity {
     }
   }
 
-  parseEntityFromWhois (entity: any, role: string) {
-    if (!entity) {
-      return;
-    }
-
-    this.email = entity.email;
-    this.ianaId = entity.registrarIANAID;
-    this.abuseEmail = entity.registrarAbuseContactEmail;
-    this.abusePhone = (!entity.registrarAbuseContactPhone) ? null : entity.registrarAbuseContactPhone.number;
-    this.phone = (!entity.phone) ? null : entity.phone.number;
-    this.fax = (!entity.fax) ? null : entity.fax.number;
-    this.legalRepresentative = entity.name;
-    this.fn = entity.organization || entity.registrar;
-    this.street = entity.street;
-    this.country = entity.country;
-    this.role = role;
-    this.stateProvince = entity.state_province;
-    this.postalCode = entity.postalCode;
-    this.mailingAddress = `${this.street || ''} ${this.stateProvince || ''} ${this.postalCode || ''} ${this.country || ''}`.trim();
-  }
 }

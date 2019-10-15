@@ -19,17 +19,12 @@ export class LookupResponse {
   mergeRegistrarInformations: any;
   registrarResponse: object;
   response: object;
-  whoisRawResponse: object;
   nonParsedResponse: object;
 
-  public constructor (rdapResponse, isWhoisFallback = false, mergeRegistrarInformations = null) {
+  public constructor (rdapResponse, mergeRegistrarInformations = null) {
     this.mergeRegistrarInformations = mergeRegistrarInformations;
 
-    if (isWhoisFallback) {
-      this.parseFallbackWhoisResponse(rdapResponse);
-    } else {
-      this.parseRdapResponse(rdapResponse);
-    }
+    this.parseRdapResponse(rdapResponse);
   }
 
   public isEventExists (events: any, event: string) {
@@ -60,7 +55,7 @@ export class LookupResponse {
       this.registrar = new Registrar(response);
       this.reseller = this.mergeRegistrarInformations.reseller;
       this.dnsSec = new DnsSec(response);
-      this.authoritativeServer = new AuthoritativeServer(response, false, this.mergeRegistrarInformations.response);
+      this.authoritativeServer = new AuthoritativeServer(response, this.mergeRegistrarInformations.response);
     } else {
       this.nonParsedResponse = this.rdapResponse;
       this.domainInformation = new DomainInformation(response);
@@ -83,16 +78,4 @@ export class LookupResponse {
     return response;
   }
 
-  private parseFallbackWhoisResponse (whoisResponse: any) {
-    this.domainInformation = new DomainInformation(whoisResponse.records[0], true);
-    this.contact = new Contact(whoisResponse.records[0], true);
-    this.registrar = new Registrar(whoisResponse.records[0], true);
-    this.reseller = new Reseller(whoisResponse.records[0], true);
-    this.dnsSec = new DnsSec(whoisResponse.records[0], true);
-    this.authoritativeServer = new AuthoritativeServer(whoisResponse.records[0], true);
-
-    if (whoisResponse.records[0].serverResponse) {
-      this.whoisRawResponse = whoisResponse.records[0].serverResponse.rawResponse;
-    }
-  }
 }

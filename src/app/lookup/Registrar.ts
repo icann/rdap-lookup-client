@@ -5,15 +5,10 @@ export class Registrar extends LookupInformation {
 
   entityRegistrar: Entity = new Entity({});
 
-  constructor (response: any, isWhoisFallback = false) {
-    super(response, isWhoisFallback);
+  constructor (response: any) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.entityRegistrar = response.entities.find((el) => el.role === 'registrar') || new Entity({});
-    } else {
-      this.entityRegistrar = new Entity(response.registrar, true, 'registrar');
-      this.entityRegistrar.link = response.referralURL;
-    }
+    this.entityRegistrar = response.entities.find((el) => el.role === 'registrar') || new Entity({});
   }
 
 }

@@ -9,14 +9,10 @@ export class Contact extends LookupInformation {
   entityAdministrative: Entity = new Entity({});
   entityReseller: Entity = new Entity({});
 
-  constructor (response: any, isWhoisFallback = false) {
-    super(response, isWhoisFallback);
+  constructor (response: any) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.parseFromRdapResponse(response);
-    } else {
-      this.parseFromWhoisResponse(response);
-    }
+    this.parseFromRdapResponse(response);
   }
 
   private parseFromRdapResponse (response: any): void {
@@ -32,9 +28,4 @@ export class Contact extends LookupInformation {
     }
    }
 
-  private parseFromWhoisResponse (response: any): void {
-    this.entityRegistrant = new Entity(response.registrant, true, 'registrant');
-    this.entityTechnical = new Entity(response.tech, true, 'technical');
-    this.entityAdministrative = new Entity(response.admin, true, 'administrative');
-  }
  }

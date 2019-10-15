@@ -19,14 +19,10 @@ export class DomainInformation extends LookupInformation {
   domainStatus: Array<DomainStatus> = [];
   nameServers: Array<NameServers> = [];
 
-  constructor (response: any, isWhoisFallback = false, mergeRegistrarInformations = null) {
-    super(response, isWhoisFallback);
+  constructor (response: any, mergeRegistrarInformations = null) {
+    super(response);
 
-    if (!isWhoisFallback) {
-      this.parseFromRdapResponse(response, mergeRegistrarInformations);
-    } else {
-      this.parseFromWhoisResponse(response);
-    }
+    this.parseFromRdapResponse(response, mergeRegistrarInformations);
   }
 
   parseFromRdapResponse (response: any, mergeRegistrarInformations: any) {
@@ -43,18 +39,6 @@ export class DomainInformation extends LookupInformation {
       this.domainStatus = this.parseDomainStatus(mergeRegistrarInformations.status);
       this.nameServers = this.parseNameServers(mergeRegistrarInformations.nameservers);
     }
-  }
-
-  private parseFromWhoisResponse (response: any): void {
-    this.ldhName = response.domainName;
-    this.handle = response.registryDomainID;
-    this.nameServers = response.nameServer ? response.nameServer.map((el: any) => {
-      const obj = {ldhName: {}};
-      obj.ldhName = el;
-      return obj;
-    }) : [];
-
-    this.domainStatus = this.parseWhoisDomainStatus(response.domainStatus);
   }
 
   private parseDomainStatus (status: any): Array<DomainStatus> {
@@ -174,20 +158,6 @@ export class DomainInformation extends LookupInformation {
       case 'client update prohibited':
         return {type: 'clientUpdateProhibited', link: baseLink + statusString};
     }
-  }
-
-  private parseWhoisDomainStatus (status: any): Array<DomainStatus> {
-    if (!status) {
-      return [];
-    }
-
-    const domainStatus = [];
-    for (const field of status) {
-      const fieldSperator = field.split(' ');
-      domainStatus.push({type: fieldSperator[0], link: fieldSperator[1]});
-    }
-
-    return domainStatus;
   }
 
 }

@@ -17,13 +17,12 @@ import { UrlParserPipe } from '../shared/pipes/url-parser.pipe';
 import { PrettyJsonModule } from 'angular2-prettyjson';
 import { MomentModule } from 'ngx-moment';
 import { Router } from '@angular/router';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { throwError } from 'rxjs';
 
 describe('LookupService', () => {
   let lookupService: LookupService;
   let router: Router;
-  let httpMock: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -54,7 +53,6 @@ describe('LookupService', () => {
 
     lookupService = TestBed.get(LookupService);
     router = TestBed.get(Router);
-    httpMock = TestBed.get(HttpTestingController);
   }));
 
   it('should be created', () => {
@@ -97,15 +95,6 @@ describe('LookupService', () => {
     lookupService.setLookup(null, true);
     expect(lookupService.messages.length).toBe(0);
     expect(navigateSpy).toHaveBeenCalledWith('/lookup');
-  });
-
-  it ('sendWhoisFallback should send request properly', () => {
-    lookupService.apiService.whoisBackendUrl = 'http://localhost:3001/whois/query?q=';
-    const data = {records: [{domainName: 'test.com'}]};
-    lookupService.sendWhoisFallBack();
-    httpMock.expectOne('http://localhost:3001/whois/query?q=null').flush(data);
-    httpMock.verify();
-    expect(lookupService.lookupResponse.domainInformation.rdapResponse.domainName).toBe('test.com');
   });
 
   it ('getDomain should return the domain', () => {
@@ -160,7 +149,6 @@ describe('LookupService', () => {
 
     expect(lookupService.getMessages().length).toBe(1);
     expect(lookupService.getMessages()[0].message).toContain('No registry RDAP server was identified for this domain.');
-    // expect(lookupService.getMessages()[1].message).toContain('Failed to perform lookup using WHOIS service: TLD_NOT_SUPPORTED.');
   });
 
 });
