@@ -11,10 +11,8 @@ import { LookupService } from '../services/lookup.service';
 })
 export class HomeComponent implements OnInit {
   domain: string;
-  websiteUrl: string;
 
   constructor(private route: ActivatedRoute, public acronymService: AcronymService, private lookupService: LookupService) {
-    this.websiteUrl = window.location.origin;
   }
 
   ngOnInit () {
