@@ -23,7 +23,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
@@ -51,7 +50,6 @@ const appRoutes: Routes = [
     AppComponent,
     LookupResponseComponent,
     UrlParserPipe,
-    FooterComponent,
     HomeComponent,
     FaqComponent,
     CookieNotificationComponent,
