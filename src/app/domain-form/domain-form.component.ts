@@ -1,7 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { AcronymService } from '../services/acronym.service';
 import { LookupService, MessageTypes } from '../services/lookup.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'rwc-domain-form',
@@ -16,7 +15,7 @@ export class DomainFormComponent implements OnInit {
   domain: string;
   public messageTypes = MessageTypes;
 
-  constructor (private router: Router, public acronymService: AcronymService, public lookupService: LookupService) {}
+  constructor (public acronymService: AcronymService, public lookupService: LookupService) {}
 
   ngOnInit () {
     if (this.lookupService.getDomain()) {
@@ -32,18 +31,6 @@ export class DomainFormComponent implements OnInit {
 
   submitRequest (): void {
     this.lookupService.sendRequest();
-  }
-
-  goToHomeAnchorDomainTou (): void {
-    // Prevent angular router not refreshing click for same route anchor
-    const url = this.router.url.split('#');
-
-    if (url[0] === '/') {
-      window.location.hash = '';
-      window.location.hash = '#domaintou';
-    } else {
-      this.router.navigate(['/'], { fragment: 'domaintou' });
-    }
   }
 
 }

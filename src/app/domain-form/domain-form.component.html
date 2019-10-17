@@ -3,12 +3,8 @@
     <div>
       <span>
         <label for="input-domain">
-          Enter a
-          <abbr (mouseout)='acronymService.setAcronym(null)' (mouseover)='acronymService.setAcronym("Domain Name")'>
-            domain name
-          </abbr>
+          Enter a domain name
         </label>
-        <a [routerLink]="['/faq']" class="faq-link">Frequently Asked Questions (FAQ)</a>
       </span>
 
       <input id="input-domain" class="input-domain" name="domain" [(ngModel)]="domain" type="text"
@@ -21,21 +17,8 @@
 
   </div>
 </form>
-
-
-<div class="privacy-tos-block small-12 medium-12 ">
-  <div class="lookup-info">
-    By submitting any personal data, I acknowledge and agree that the personal data submitted by me will be processed in accordance with the ICANN
-    <a href="https://www.icann.org/privacy/policy" target="_blank">Privacy Policy</a>, and agree to abide by the website
-    <a href="https://www.icann.org/privacy/tos" target="_blank">Terms of Service</a>
-    and the
-    <a (click)="goToHomeAnchorDomainTou()">Domain Name Registration Data Lookup Terms of Use</a>.
-
-  </div>
-  <div class="lookup-btn-filler">
-  </div>
+<div class="lookup-btn-filler">
 </div>
-  
 <ng-container>
   <div *ngFor="let message of lookupService.messages" [className]="message.type==messageTypes.Info ? 'notice alert cell large-6' : 'error alert cell large-6'">
     {{ message.message }}
