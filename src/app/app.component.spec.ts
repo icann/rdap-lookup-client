@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LookupResponseComponent } from './lookup-response/lookup-response.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
@@ -38,7 +37,6 @@ describe('AppComponent', () => {
         AppComponent,
         AcronymComponent,
         UrlParserPipe,
-        HeaderComponent,
         FooterComponent,
         DomainFormComponent
       ],
