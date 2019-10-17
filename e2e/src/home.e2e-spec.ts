@@ -20,26 +20,4 @@ describe('Home', () => {
     expect(browser.getCurrentUrl()).toMatch(/\/lookup$/);
   });
 
-  it ('Should contain about part', () => {
-    page.navigateTo();
-
-    expect(element(by.css('.lookup-tool-informations--title')).getText()).toBe('About ICANN’s Domain Name Registration Data Lookup');
-  });
-
-  it ('Should contain the FAQ link', () => {
-    page.navigateTo();
-    const faqLink = element(by.css('.faq-link'));
-    faqLink.click();
-
-    expect(browser.getCurrentUrl()).toMatch(/\/faq$/);
-  });
-
-  it('Should have a good structure', () => {
-    page.navigateTo();
-
-    expect(element(by.css('.menu')).isPresent()).toBeTruthy();
-    expect(element(by.css('.content')).isPresent()).toBeTruthy();
-    expect(element(by.css('.footer')).isPresent()).toBeTruthy();
-  });
-
 });

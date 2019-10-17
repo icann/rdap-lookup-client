@@ -8,14 +8,6 @@ describe('FaqPage', () => {
     page = new FaqPage();
   });
 
-  it('Should have a good structure', () => {
-    page.navigateTo();
-
-    expect(element(by.css('.menu')).isPresent()).toBeTruthy();
-    expect(element(by.css('.content')).isPresent()).toBeTruthy();
-    expect(element(by.css('.footer')).isPresent()).toBeTruthy();
-  });
-
   it('Url should be correct', () => {
     page.navigateTo();
 
