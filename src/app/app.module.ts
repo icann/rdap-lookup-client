@@ -24,7 +24,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { HomeComponent } from './home/home.component';
-import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
 import { CookieService } from 'ngx-cookie-service';
 import { DomainFormComponent } from './domain-form/domain-form.component';
 import { AcronymComponent } from './acronym/acronym.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
     LookupResponseComponent,
     UrlParserPipe,
     HomeComponent,
-    CookieNotificationComponent,
     DomainFormComponent,
     AcronymComponent,
     AcronymParserPipe

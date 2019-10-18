@@ -16,7 +16,6 @@ import { LookupDnssecComponent } from './lookup-response/lookup-dnssec/lookup-dn
 import { LookupContactComponent } from './lookup-response/lookup-contact/lookup-contact';
 import { LookupRegistrarComponent } from './lookup-response/lookup-registrar/lookup-registrar';
 import { LookupResellerComponent } from './lookup-response/lookup-reseller/lookup-reseller';
-import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
 import { DomainFormComponent } from './domain-form/domain-form.component';
 import { AcronymService } from './services/acronym.service';
 import { AcronymComponent } from './acronym/acronym.component';
@@ -32,7 +31,6 @@ describe('AppComponent', () => {
         LookupDomainInformationComponent,
         LookupAuthoritativeServerComponent,
         LookupResellerComponent,
-        CookieNotificationComponent,
         AppComponent,
         AcronymComponent,
         UrlParserPipe,
