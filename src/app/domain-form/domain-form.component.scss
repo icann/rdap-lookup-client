@@ -17,7 +17,6 @@ form {
   }
   > div {
     display: flex;
-    flex-basis: 100%;
     @media (max-width: $_BREAKPOINT_MOBILE) {
       flex-wrap: wrap;
     }

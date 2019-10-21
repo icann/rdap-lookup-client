@@ -23,21 +23,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FaqComponent } from './faq/faq.component';
-import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
 import { CookieService } from 'ngx-cookie-service';
 import { DomainFormComponent } from './domain-form/domain-form.component';
-import { AcronymComponent } from './acronym/acronym.component';
-import { AcronymParserPipe } from './shared/pipes/acronym-parser.pipe';
 import { LookupService } from './services/lookup.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'lookup', component: LookupResponseComponent },
-  { path: 'faq', component: FaqComponent },
   { path: '**', redirectTo: '/' }
 ];
 
@@ -52,14 +45,8 @@ const appRoutes: Routes = [
     AppComponent,
     LookupResponseComponent,
     UrlParserPipe,
-    HeaderComponent,
-    FooterComponent,
     HomeComponent,
-    FaqComponent,
-    CookieNotificationComponent,
-    DomainFormComponent,
-    AcronymComponent,
-    AcronymParserPipe
+    DomainFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),

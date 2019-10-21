@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 
 export class AppComponent {
-  title = 'ICANN Lookup';
+  title = 'RDAP Lookup';
   constructor() {
 
   }

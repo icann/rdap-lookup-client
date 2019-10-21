@@ -1,8 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LookupResponseComponent } from './lookup-response/lookup-response.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { PrettyJsonModule } from 'angular2-prettyjson';
@@ -18,10 +16,7 @@ import { LookupDnssecComponent } from './lookup-response/lookup-dnssec/lookup-dn
 import { LookupContactComponent } from './lookup-response/lookup-contact/lookup-contact';
 import { LookupRegistrarComponent } from './lookup-response/lookup-registrar/lookup-registrar';
 import { LookupResellerComponent } from './lookup-response/lookup-reseller/lookup-reseller';
-import { CookieNotificationComponent } from './cookie-notification/cookie-notification.component';
 import { DomainFormComponent } from './domain-form/domain-form.component';
-import { AcronymService } from './services/acronym.service';
-import { AcronymComponent } from './acronym/acronym.component';
 import { LookupService } from './services/lookup.service';
 
 describe('AppComponent', () => {
@@ -34,12 +29,8 @@ describe('AppComponent', () => {
         LookupDomainInformationComponent,
         LookupAuthoritativeServerComponent,
         LookupResellerComponent,
-        CookieNotificationComponent,
         AppComponent,
-        AcronymComponent,
         UrlParserPipe,
-        HeaderComponent,
-        FooterComponent,
         DomainFormComponent
       ],
       imports: [
@@ -53,7 +44,6 @@ describe('AppComponent', () => {
       ],
       providers: [
         CookieService,
-        AcronymService,
         LookupService
       ]
     }).compileComponents();
@@ -63,9 +53,9 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'ICANN Lookup'`, async(() => {
+  it(`should have as title 'RDAP Lookup'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ICANN Lookup');
+    expect(app.title).toEqual('RDAP Lookup');
   }));
 });

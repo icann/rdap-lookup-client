@@ -1,7 +1,6 @@
 @import '../../assets/scss/variables/variables';
 
 .home-lookup {
-  background-color: $color-background-grey;
   margin: 0 auto;
 
   @media(max-width: $_BREAKPOINT_TABLET) {
