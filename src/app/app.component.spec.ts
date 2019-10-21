@@ -4,7 +4,6 @@ import { LookupResponseComponent } from './lookup-response/lookup-response.compo
 import { FormsModule } from '@angular/forms';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { PrettyJsonModule } from 'angular2-prettyjson';
-import { CookieService } from 'ngx-cookie-service';
 import { MomentModule } from 'ngx-moment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -43,7 +42,6 @@ describe('AppComponent', () => {
         HttpClientModule
       ],
       providers: [
-        CookieService,
         LookupService
       ]
     }).compileComponents();

@@ -28,7 +28,6 @@
     "foundation-sites": "^6.5.3",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
-    "ngx-cookie-service": "^2.2.0",
     "ngx-moment": "^3.4.0",
     "punycode": "^2.1.1",
     "rxjs": "^6.5.2",

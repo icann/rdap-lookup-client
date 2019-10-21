@@ -24,7 +24,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { HomeComponent } from './home/home.component';
-import { CookieService } from 'ngx-cookie-service';
 import { DomainFormComponent } from './domain-form/domain-form.component';
 import { LookupService } from './services/lookup.service';
 
@@ -58,7 +57,7 @@ const appRoutes: Routes = [
     MomentModule,
     MatExpansionModule
   ],
-  providers: [ CookieService, LookupService ],
+  providers: [ LookupService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
