@@ -26,8 +26,6 @@ import { UrlParserPipe } from './shared/pipes/url-parser.pipe';
 import { HomeComponent } from './home/home.component';
 import { CookieService } from 'ngx-cookie-service';
 import { DomainFormComponent } from './domain-form/domain-form.component';
-import { AcronymComponent } from './acronym/acronym.component';
-import { AcronymParserPipe } from './shared/pipes/acronym-parser.pipe';
 import { LookupService } from './services/lookup.service';
 
 const appRoutes: Routes = [
@@ -48,9 +46,7 @@ const appRoutes: Routes = [
     LookupResponseComponent,
     UrlParserPipe,
     HomeComponent,
-    DomainFormComponent,
-    AcronymComponent,
-    AcronymParserPipe
+    DomainFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),

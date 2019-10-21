@@ -17,8 +17,6 @@ import { LookupContactComponent } from './lookup-response/lookup-contact/lookup-
 import { LookupRegistrarComponent } from './lookup-response/lookup-registrar/lookup-registrar';
 import { LookupResellerComponent } from './lookup-response/lookup-reseller/lookup-reseller';
 import { DomainFormComponent } from './domain-form/domain-form.component';
-import { AcronymService } from './services/acronym.service';
-import { AcronymComponent } from './acronym/acronym.component';
 import { LookupService } from './services/lookup.service';
 
 describe('AppComponent', () => {
@@ -32,7 +30,6 @@ describe('AppComponent', () => {
         LookupAuthoritativeServerComponent,
         LookupResellerComponent,
         AppComponent,
-        AcronymComponent,
         UrlParserPipe,
         DomainFormComponent
       ],
@@ -47,7 +44,6 @@ describe('AppComponent', () => {
       ],
       providers: [
         CookieService,
-        AcronymService,
         LookupService
       ]
     }).compileComponents();
