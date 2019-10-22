@@ -29,23 +29,6 @@
             "scripts": ["./node_modules/jquery/dist/jquery.min.js", "./node_modules/foundation-sites/dist/js/foundation.min.js"]
           },
           "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            },
             "test": {
               "fileReplacements": [
                 {
@@ -62,9 +45,6 @@
             "browserTarget": "icann-lookup-client:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "icann-lookup-client:build:production"
-            },
             "test": {
               "browserTarget": "icann-lookup-client:build:test"
             }
@@ -118,9 +98,6 @@
             "devServerTarget": "icann-lookup-client:serve:test"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "icann-lookup-client:build:test"
-            },
             "test": {
               "devServerTarget": "icann-lookup-client:build:test"
             }
