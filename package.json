@@ -6,10 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "mock:server": "node ./mocks/middleware.js",
-    "test-e2e": "concurrently -s first -k \"node ./mocks/middleware.js\" \"ng e2e  --protractor-config=e2e/protractor.conf.js\""
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

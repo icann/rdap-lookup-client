@@ -51,10 +51,6 @@ testem.log
 /typings
 /www
 
-# e2e
-/e2e/*.map
-/e2e-output
-
 # System Files
 .DS_Store
 Thumbs.db
