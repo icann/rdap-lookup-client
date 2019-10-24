@@ -1,0 +1,26 @@
+<form id="domain-form" novalidate #lookupForm="ngForm" (ngSubmit)="submitLookupAction()">
+  <div>
+    <div>
+      <span>
+        <label for="input-domain">
+          Enter a domain name
+        </label>
+      </span>
+
+      <input id="input-domain" class="input-domain" name="domain" [(ngModel)]="domain" type="text"
+      placeholder="Enter a domain" />
+    </div>
+
+    <button class="button submit-lookup" type="submit">
+      Lookup
+    </button>
+
+  </div>
+</form>
+<div class="lookup-btn-filler">
+</div>
+<ng-container>
+  <div *ngFor="let message of lookupService.messages" [className]="message.type==messageTypes.Info ? 'notice alert cell large-6' : 'error alert cell large-6'">
+    {{ message.message }}
+  </div>
+</ng-container>

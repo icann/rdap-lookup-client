@@ -1,0 +1,64 @@
+<div class="information-panel" *ngIf="!isContactsPanelEmpty()">
+    <h5 class="information-panel--heading">
+      Contact Information
+    </h5>
+    <div class="information-panel--body">
+      <ng-container *ngIf="!contact.entityRegistrant.isContactEmpty()">
+        <span class="information-panel--subtitle"> Registrant: </span>
+        <ul class="item-list">
+          <li *ngIf="contact.entityRegistrant.legalRepresentative"> <span class="item-line-title"> Name:</span> {{ contact.entityRegistrant.legalRepresentative }} </li>
+          <li *ngIf="contact.entityRegistrant.fn"> <span class="item-line-title"> Organization:</span> {{ contact.entityRegistrant.fn }}   </li>
+          <li *ngIf="contact.entityRegistrant.email"> <span class="item-line-title"> Email: </span> {{ contact.entityRegistrant.email }} </li>
+          <li *ngIf="contact.entityRegistrant.phone"> <span class="item-line-title"> Tel: </span> {{ contact.entityRegistrant.phone }} </li>
+          <li *ngIf="contact.entityRegistrant.fax"> <span class="item-line-title"> Fax: </span> {{ contact.entityRegistrant.fax }} </li>
+          <li *ngIf="contact.entityRegistrant.mailingAddress"> <span class="item-line-title"> Mailing Address: </span> {{ contact.entityRegistrant.mailingAddress }} </li>
+        </ul>
+      </ng-container>
+
+      <ng-container *ngIf="!contact.entityTechnical.isContactEmpty()">
+          <span class="information-panel--subtitle"> Technical: </span>
+          <ul class="item-list">
+            <li *ngIf="contact.entityTechnical.legalRepresentative"> <span class="item-line-title"> Name:</span> {{ contact.entityTechnical.legalRepresentative }} </li>
+            <li *ngIf="contact.entityTechnical.fn"> <span class="item-line-title"> Organization:</span> {{ contact.entityTechnical.fn }}   </li>
+            <li *ngIf="contact.entityTechnical.email"> <span class="item-line-title"> Email: </span> {{ contact.entityTechnical.email }} </li>
+            <li *ngIf="contact.entityTechnical.phone"> <span class="item-line-title"> Tel: </span> {{ contact.entityTechnical.phone }} </li>
+            <li *ngIf="contact.entityTechnical.fax"> <span class="item-line-title"> Fax: </span> {{ contact.entityTechnical.fax }} </li>
+            <li *ngIf="contact.entityTechnical.mailingAddress"> <span class="item-line-title"> Mailing Address: </span> {{ contact.entityTechnical.mailingAddress }} </li>
+          </ul>
+        </ng-container>
+
+        <ng-container *ngIf="!contact.entityAdministrative.isContactEmpty()">
+          <span class="information-panel--subtitle"> Administrative: </span>
+
+          <ul class="item-list">
+            <li *ngIf="contact.entityAdministrative.legalRepresentative"> <span class="item-line-title"> Name:</span> {{ contact.entityAdministrative.legalRepresentative }} </li>
+            <li *ngIf="contact.entityAdministrative.fn"> <span class="item-line-title"> Organization:</span> {{ contact.entityAdministrative.fn }}   </li>
+            <li *ngIf="contact.entityAdministrative.email"> <span class="item-line-title"> Email: </span> {{ contact.entityAdministrative.email }} </li>
+            <li *ngIf="contact.entityAdministrative.phone"> <span class="item-line-title"> Tel: </span> {{ contact.entityAdministrative.phone }} </li>
+            <li *ngIf="contact.entityAdministrative.fax"> <span class="item-line-title"> Fax: </span> {{ contact.entityAdministrative.fax }} </li>
+            <li *ngIf="contact.entityAdministrative.mailingAddress"> <span class="item-line-title"> Mailing Address: </span> {{ contact.entityAdministrative.mailingAddress }} </li>
+          </ul>
+        </ng-container>
+
+        <ng-container *ngFor="let entity of contact.displayedEntities">
+          <span class="information-panel--subtitle"> {{ entity.role }}: </span>
+          <ul class="item-list">
+            <li *ngIf="entity.legalRepresentative"> <span class="item-line-title"> Name:</span> {{ entity.legalRepresentative }} </li>
+            <li *ngIf="entity.fn"> <span class="item-line-title"> Organization:</span> {{ entity.fn }}   </li>
+            <li *ngIf="entity.email"> <span class="item-line-title"> Email: </span> {{ entity.email }} </li>
+            <li *ngIf="entity.phone"> <span class="item-line-title"> Tel: </span> {{ entity.phone }} </li>
+            <li *ngIf="entity.fax"> <span class="item-line-title"> Fax: </span> {{ entity.fax }} </li>
+            <li *ngIf="entity.mailingAddress"> <span class="item-line-title"> Mailing Address: </span> {{ entity.mailingAddress }} </li>
+          </ul>
+        </ng-container>
+
+
+      <p>
+        <span class="remarks remarks--entity" *ngFor="let remark of contact.entitiesRemarks">
+          {{ remark.title }}:
+          {{ remark.description[0] }}
+        </span>
+      </p>
+
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="information-panel" *ngIf="!isRegistrarPanelEmpty()">
+    <h5 class="information-panel--heading"> Registrar Information </h5>
+
+    <div class="information-panel--body">
+      <ul class="item-list">
+        <li *ngIf="registrar.entityRegistrar.fn||registrar.entityRegistrar.legalRepresentative">
+          <span class="item-line-title"> Name: </span>
+          {{ registrar.entityRegistrar.legalRepresentative || registrar.entityRegistrar.fn }}
+        </li>
+        <li *ngIf="registrar.entityRegistrar.ianaId"> <span class="item-line-title"> IANA ID: </span> {{ registrar.entityRegistrar.ianaId }} </li>
+        <li *ngIf="registrar.entityRegistrar.link">
+          <span class="item-line-title"> URL: </span>
+          <span *ngIf="registrar.entityRegistrar&&registrar.entityRegistrar.link" [innerHtml]="registrar.entityRegistrar.link | urlParser"></span>
+        </li>
+        <li *ngIf="registrar.entityRegistrar.abuseEmail"> <span class="item-line-title"> Abuse Contact Email: </span> {{ registrar.entityRegistrar.abuseEmail }} </li>
+        <li *ngIf="registrar.entityRegistrar.abusePhone"> <span class="item-line-title"> Abuse Contact Phone: </span> {{ registrar.entityRegistrar.abusePhone }} </li>
+      </ul>
+    </div>
+  </div>

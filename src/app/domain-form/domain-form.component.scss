@@ -1,0 +1,94 @@
+@import '../../assets/scss/variables/variables';
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  label {
+    color: $color-black;
+    align-self: flex-end;
+    @media(max-width: 500px) {
+      font-size: 0.75rem;
+    }
+  }
+  .faq-link {
+    @media(max-width: 500px) {
+      font-size: 0.75rem;
+    }
+  }
+  > div {
+    display: flex;
+    @media (max-width: $_BREAKPOINT_MOBILE) {
+      flex-wrap: wrap;
+    }
+    > div {
+      display: flex;
+      flex-basis: 100%;
+      flex-wrap: wrap;
+      > * {
+        display: flex;
+        flex-grow: 1;
+        > a {
+          margin-left: auto;
+          @media(min-width: 500px) {
+            padding-right: 3px;
+          }
+          padding-bottom: 3px;
+          text-align: right;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+  input {
+    border-radius: 3px;
+    margin-bottom: 0;
+  }
+  button {
+    @media (max-width: $_BREAKPOINT_MOBILE) {
+      width: auto;
+      flex-basis: 100%;
+      padding: 12px 0;
+      margin: 10px 0 0;
+    }
+    width: 200px;
+    padding: 12px 4rem;
+    margin: 0 0 0 2.5rem;
+    opacity: 1;
+    align-self: flex-end;
+    min-width: 200px;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.privacy-tos-block {
+  display: flex;
+  flex-basis: 100%;
+
+  .lookup-info {
+    text-align: justify;
+    font-size: 0.875rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: $color-black;
+  }
+}
+
+// The filler should occupy the same width as the Lookup button
+.lookup-btn-filler {
+  padding: 10px 100px;
+  margin: 0 0 0 2.5rem;
+
+  @media (max-width: $_BREAKPOINT_MOBILE) {
+    width: auto;
+    padding: 12px 0;
+    margin: 10px 0 0;
+  }
+}
+
+.alert {
+  &.notice, &.error {
+    margin-top: 0;
+  }
+}

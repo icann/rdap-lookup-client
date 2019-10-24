@@ -1,0 +1,58 @@
+<div class="information-panel">
+    <h5 class="information-panel--heading">
+      Domain Information
+    </h5>
+
+    <div class="information-panel--body">
+      <ul class="item-list">
+        <li>
+          <span class="item-line-title"> Name: </span>
+          <span class="title-name">{{ domainInformation.ldhName }}</span>
+        </li>
+        <li *ngIf="domainInformation.unicodeName">
+          <span class="item-line-title"> Internationalized Domain Name: </span> {{ domainInformation.unicodeName }}
+        </li>
+        <li *ngIf="domainInformation.handle">
+            <span class="item-line-title"> Registry Domain ID: </span> {{ domainInformation.handle }}
+        </li>
+        <li *ngIf="domainInformation.domainStatus.length>0">
+          <span class="item-line-title"> Domain Status: </span>
+          <p *ngFor="let domainStatus of domainInformation.domainStatus">
+            <span
+              *ngIf="domainStatus"
+              [innerHtml]="domainStatus.type | urlParser: domainStatus.link">
+            </span>
+          </p>
+        </li>
+        <div>
+        </div>
+        <li *ngIf="domainInformation.nameServers.length>0">
+          <span class="item-line-title"> Nameservers: </span>
+          <p *ngFor="let nameserver of domainInformation.nameServers">
+            {{ nameserver.ldhName }}<span *ngIf="nameserver.ips&&nameserver.ips.length>0">: </span>
+            <span *ngIf="nameserver.ips" class="break-soft">{{ nameserver.ips.join(', ') }}</span>
+          </p>
+        </li>
+      </ul>
+
+      <span class="information-panel--subtitle" *ngIf="!isSubPanelDatesEmpty()"> Dates </span>
+      <ul class="item-list">
+        <li *ngIf="domainInformation.isEventExists(domainInformation.events, 'expiration');">
+          <span class="item-line-title"> Registry Expiration: </span>
+          <span class="date registry-expiration">{{ getEventDate('expiration', domainInformation.events) | amFromUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+        <li *ngIf="domainInformation.isEventExists(domainInformation.registrarEvents, 'expiration');">
+          <span class="item-line-title" *ngIf="domainInformation.registrarEvents"> Registrar Expiration: </span>
+          <span class="date registrar-expiration">{{ getEventDate('expiration', domainInformation.registrarEvents) | amFromUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+        <li *ngIf="domainInformation.isEventExists(domainInformation.events, 'last changed')">
+          <span class="item-line-title"> Updated: </span>
+          <span class="date registry-updated">{{ getEventDate('last changed', domainInformation.events) | amFromUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+        <li *ngIf="domainInformation.isEventExists(domainInformation.events, 'registration');">
+          <span class="item-line-title"> Created: </span>
+          <span class="date registry-created">{{ getEventDate('registration', domainInformation.events) | amFromUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss UTC' }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>

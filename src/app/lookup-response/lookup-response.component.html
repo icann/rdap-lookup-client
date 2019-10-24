@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="domain-lookup">
+    <div class="large-12 columns">
+      <h1>Domain Name Registration Data Lookup</h1>
+    </div>
+
+    <div class="small-12 large-12 medium-12 columns search-form">
+      <rwc-domain-form></rwc-domain-form>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="loader" *ngIf="lookupService.isWorkingInprogress">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <div *ngIf="!lookupService.isWorkingInprogress">
+    <div *ngIf="lookupService.lookupResponse&&!error">
+        <div class="row">
+          <div class="small-12 columns">
+            <rwc-lookup-domain-information [domainInformation]="lookupService.lookupResponse.domainInformation"></rwc-lookup-domain-information>
+            <rwc-lookup-contact [contact]="lookupService.lookupResponse.contact"></rwc-lookup-contact>
+            <rwc-lookup-registrar [registrar]="lookupService.lookupResponse.registrar"></rwc-lookup-registrar>
+            <rwc-lookup-reseller [reseller]="lookupService.lookupResponse.reseller"></rwc-lookup-reseller>
+            <rwc-lookup-dnssec [dnsSec]="lookupService.lookupResponse.dnsSec"></rwc-lookup-dnssec>
+            <rwc-lookup-authoritative-server [authoritativeServer]="lookupService.lookupResponse.authoritativeServer"></rwc-lookup-authoritative-server>
+          </div>
+        </div>
+      </div>
+
+      <div class="row hide-for-small-only" *ngIf="lookupService.lookupResponse&&(lookupService.lookupResponse.rdapResponse||lookupService.lookupResponse.registrarResponse)">
+          <div class="medium-12 columns spacer"> <hr /> </div>
+        </div>
+
+          <div class="row hide-for-small-only raw-response">
+              <div class="small-12 columns">
+                <mat-accordion>
+                  <mat-expansion-panel class="accordion" *ngIf="lookupService.lookupResponse&&lookupService.lookupResponse.rdapJsonResponse">
+                    <mat-expansion-panel-header class="panel-header">
+                      <mat-panel-title>
+                        Raw Registry RDAP Response
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <pre [innerHtml]="lookupService.lookupResponse.rdapJsonResponse | prettyjson:3"></pre>
+
+                  </mat-expansion-panel>
+
+                  <mat-expansion-panel class="accordion" *ngIf="lookupService.lookupResponse&&lookupService.lookupResponse.registrarResponse">
+                    <mat-expansion-panel-header class="panel-header">
+                      <mat-panel-title>
+                        Raw Registrar RDAP Response
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <pre [innerHtml]="lookupService.lookupResponse.registrarResponse.response | prettyjson:3"></pre>
+
+                  </mat-expansion-panel>
+
+                  </mat-accordion>
+              </div>
+  </div>

@@ -1,0 +1,47 @@
+@import '../../assets/scss/variables/variables';
+
+.home-lookup {
+  margin: 0 auto;
+
+  @media(max-width: $_BREAKPOINT_TABLET) {
+    background-position: 86%;
+  }
+
+  @media(max-width: $_BREAKPOINT_MOBILE) {
+    background-position: 46%;
+    height: auto;
+  }
+
+  @media (max-width: $_BREAKPOINT_TABLET) {
+    padding: 0 10px;
+  }
+  &--form {
+    h1 {
+      padding: 40px 0 11px;
+      font-size: 2rem;
+      color: $color-blue-dark;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+.lookup-tool-informations {
+  color: $color-black-light;
+  @media (max-width: $_BREAKPOINT_TABLET) {
+    padding: 0 10px 20px;
+  }
+  &--title {
+    font-weight: bold;
+    color: $color-black-light;
+    padding: 25px 0 0;
+    font-size: 1.5rem
+  }
+  .spacer {
+    margin: 20px 0;
+    width: 100%;
+    display: block;
+    border-bottom: 1px $color-black-light solid;
+  }
+}

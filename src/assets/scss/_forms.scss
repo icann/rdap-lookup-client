@@ -1,0 +1,54 @@
+form {
+  .input-group {
+    &.full-width {
+      flex-grow: 1;
+      align-items: end;
+      justify-content: space-between;
+      margin: 0;
+      & > div {
+        &:not(:last-child) {
+          flex-grow: 1;
+          padding-right: 10px;
+        }
+      }
+      input {
+        border-radius: 2px;
+      }
+      button {
+        align-self: flex-end;
+        border-radius: 2px;
+        padding: 11px 20px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+form {
+  button.button,
+  input[type="submit"] {
+    border-radius: 3px;
+  }
+}
+
+.buttonInForm {
+  margin-left: -1px;
+}
+
+input[type="text"] {
+  box-sizing: border-bos;
+  border: 1px $color-blue-light solid;
+  border-radius: 3px;
+  &.buttonInInput {
+    border-right: none;
+    border-radius: 3px 0px 0px 3px;
+    margin-right: -1px;
+  }
+}
+
+.button {
+  &.buttonInInput {
+    height: 39px;
+    border-radius: 0 3px 3px 0px;
+  }
+}
