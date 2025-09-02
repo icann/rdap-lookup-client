@@ -7,11 +7,11 @@
     "declaration": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -24,5 +24,10 @@
         "node_modules/core-js/proposals/reflect-metadata"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
