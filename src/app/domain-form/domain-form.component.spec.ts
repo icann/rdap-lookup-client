@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DomainFormComponent } from './domain-form.component';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ describe('DomainFormComponent without pre domain', () => {
   let fixture: ComponentFixture<DomainFormComponent>;
   let router: Router;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DomainFormComponent ],
       imports: [
@@ -55,7 +55,7 @@ describe('DomainFormComponent without pre domain', () => {
 describe('DomainFormComponent with pre domain', () => {
   let fixture: ComponentFixture<DomainFormComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DomainFormComponent ],
       imports: [

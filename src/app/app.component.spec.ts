@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LookupResponseComponent } from './lookup-response/lookup-response.component';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ import { DomainFormComponent } from './domain-form/domain-form.component';
 import { LookupService } from './services/lookup.service';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LookupRegistrarComponent,
         LookupContactComponent,
@@ -46,12 +46,12 @@ describe('AppComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'RDAP Lookup'`, async(() => {
+  it(`should have as title 'RDAP Lookup'`, waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('RDAP Lookup');

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LookupResponseComponent } from './lookup-response.component';
 import { LookupDomainInformationComponent } from './lookup-domain-information/lookup-domain-information';
 import { LookupAuthoritativeServerComponent } from './lookup-authoritative-server/lookup-authoritative-server';
@@ -23,7 +23,7 @@ describe('LookupResponseComponent', () => {
   let fictureDnsSec: ComponentFixture<LookupDnssecComponent>;
   let fixture: ComponentFixture<LookupResponseComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         LookupRegistrarComponent,

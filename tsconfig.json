@@ -11,7 +11,8 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -23,7 +24,8 @@
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"
       ]
-    }
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableIvy": true,

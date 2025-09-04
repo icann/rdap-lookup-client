@@ -21,7 +21,7 @@
 
 
   <div *ngIf="!lookupService.isWorkingInprogress">
-    <div *ngIf="lookupService.lookupResponse&&!error">
+    <div *ngIf="lookupService.lookupResponse">
         <div class="row">
           <div class="small-12 columns">
             <rwc-lookup-domain-information [domainInformation]="lookupService.lookupResponse.domainInformation"></rwc-lookup-domain-information>
@@ -34,21 +34,21 @@
         </div>
       </div>
 
-      <div class="row hide-for-small-only" *ngIf="lookupService.lookupResponse&&(lookupService.lookupResponse.rdapResponse||lookupService.lookupResponse.registrarResponse)">
+      <div class="row hide-for-small-only" *ngIf="lookupService.lookupResponse && (lookupService.lookupResponse.rdapResponse || lookupService.lookupResponse.registrarResponse)">
           <div class="medium-12 columns spacer"> <hr /> </div>
         </div>
 
           <div class="row hide-for-small-only raw-response">
               <div class="small-12 columns">
                 <mat-accordion>
-                  <mat-expansion-panel class="accordion" *ngIf="lookupService.lookupResponse&&lookupService.lookupResponse.rdapJsonResponse">
+                  <mat-expansion-panel class="accordion" *ngIf="lookupService.lookupResponse && lookupService.lookupResponse.rdapJsonResponse">
                     <mat-expansion-panel-header class="panel-header">
                       <mat-panel-title>
                         Raw Registry RDAP Response
                       </mat-panel-title>
                     </mat-expansion-panel-header>
 
-                    <pre [innerHtml]="lookupService.lookupResponse.rdapJsonResponse | prettyjson:3"></pre>
+                    <pre [innerHtml]="lookupService.lookupResponse.rdapJsonResponse | json"></pre>
 
                   </mat-expansion-panel>
 
@@ -59,7 +59,7 @@
                       </mat-panel-title>
                     </mat-expansion-panel-header>
 
-                    <pre [innerHtml]="lookupService.lookupResponse.registrarResponse.response | prettyjson:3"></pre>
+                    <pre [innerHtml]="lookupService.lookupResponse.registrarResponse.response | json"></pre>
 
                   </mat-expansion-panel>
 
