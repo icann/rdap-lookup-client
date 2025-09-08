@@ -9,7 +9,6 @@ import { LookupResellerComponent } from './lookup-reseller/lookup-reseller';
 
 import { FormsModule } from '@angular/forms';
 import { UrlParserPipe } from '../shared/pipes/url-parser.pipe';
-import { PrettyJsonModule } from 'angular2-prettyjson';
 import { MomentModule } from 'ngx-moment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -41,7 +40,6 @@ describe('LookupResponseComponent', () => {
           [{path: 'lookup', component: LookupResponseComponent}]
         ),
         FormsModule,
-        PrettyJsonModule,
         MomentModule,
         BrowserAnimationsModule,
         MatExpansionModule,

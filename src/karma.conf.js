@@ -9,34 +9,54 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
-      require('karma-junit-reporter')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage'),
-      reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+    jasmineHtmlReporter: {
+      suppressAll: true // removes the duplicated traces
     },
-    junitReporter: {
-      outputDir: '../../../target/', // results will be saved as $outputDir/$browserName.xml
-      outputFile: 'test-results.xml' // if included, results will be saved as $outputDir/$browserName/$outputFile
+
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage'),
+      subdir: '.',
+      reporters: [
+        { type: 'html' },
+        { type: 'text-summary' },
+        { type: 'lcovonly' }
+      ],
+      fixWebpackSourcePaths: true,
+      // check: {
+      //   emitWarning: false,
+      //   global: {
+      //     statements: 80,
+      //     branches: 80,
+      //     functions: 80,
+      //     lines: 80
+      //   }
+      // }
+
     },
-    reporters: ['progress', 'kjhtml', 'junit'],
+
+    // junitReporter: {
+    //   outputDir: '../../../target/', // results will be saved as $outputDir/$browserName.xml
+    //   outputFile: 'test-results.xml' // if included, results will be saved as $outputDir/$browserName/$outputFile
+    // },
+    reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadlessNoSandbox'],
-    customLaunchers: {
-        ChromeHeadlessNoSandbox: {
-            base: 'ChromeHeadless',
-            flags: ['--no-sandbox']
-        }
-    },
-    singleRun: false
+    browsers: ['Chrome'],
+    // browsers: ['ChromeHeadlessNoSandbox'],
+    // customLaunchers: {
+    //     ChromeHeadlessNoSandbox: {
+    //         base: 'ChromeHeadless',
+    //         flags: ['--no-sandbox']
+    //     }
+    // },
+    singleRun: true
   });
 };
