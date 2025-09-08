@@ -40,23 +40,18 @@ module.exports = function (config) {
 
     },
 
-    // junitReporter: {
-    //   outputDir: '../../../target/', // results will be saved as $outputDir/$browserName.xml
-    //   outputFile: 'test-results.xml' // if included, results will be saved as $outputDir/$browserName/$outputFile
-    // },
     reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    // browsers: ['ChromeHeadlessNoSandbox'],
-    // customLaunchers: {
-    //     ChromeHeadlessNoSandbox: {
-    //         base: 'ChromeHeadless',
-    //         flags: ['--no-sandbox']
-    //     }
-    // },
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+        ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox']
+        }
+    },
     singleRun: true
   });
 };
