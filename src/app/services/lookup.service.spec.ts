@@ -1,7 +1,8 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { LookupService, MessageTypes } from './lookup.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HomeComponent } from '../home/home.component';
 import { DomainFormComponent } from '../domain-form/domain-form.component';
 import { LookupResponseComponent } from '../lookup-response/lookup-response.component';
@@ -14,17 +15,17 @@ import { LookupResellerComponent } from '../lookup-response/lookup-reseller/look
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { UrlParserPipe } from '../shared/pipes/url-parser.pipe';
-import { PrettyJsonModule } from 'angular2-prettyjson';
 import { MomentModule } from 'ngx-moment';
 import { Router } from '@angular/router';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { throwError } from 'rxjs';
 
 describe('LookupService', () => {
   let lookupService: LookupService;
   let router: Router;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
@@ -39,15 +40,16 @@ describe('LookupService', () => {
         UrlParserPipe
       ],
       imports: [
-        HttpClientTestingModule,
-        HttpClientModule,
         FormsModule,
-        PrettyJsonModule,
         RouterTestingModule.withRoutes(
           [{path: 'lookup', component: HomeComponent}, {path: '', component: DomainFormComponent}]
         ),
         MatExpansionModule,
         MomentModule
+      ],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting()
       ]
     }).compileComponents();
 

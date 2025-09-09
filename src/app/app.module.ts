@@ -12,7 +12,6 @@ import { LookupResellerComponent } from './lookup-response/lookup-reseller/looku
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { PrettyJsonModule } from 'angular2-prettyjson';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -53,7 +52,6 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    PrettyJsonModule,
     MomentModule,
     MatExpansionModule
   ],

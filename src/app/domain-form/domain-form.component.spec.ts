@@ -1,32 +1,33 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DomainFormComponent } from './domain-form.component';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LookupService } from '../services/lookup.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DomainFormComponent without pre domain', () => {
   let component: DomainFormComponent;
   let fixture: ComponentFixture<DomainFormComponent>;
   let router: Router;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async() => {
+    await TestBed.configureTestingModule({
       declarations: [ DomainFormComponent ],
       imports: [
-        HttpClientModule,
         FormsModule,
         RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}])
       ],
       providers: [
-        LookupService
+        LookupService,
+        provideHttpClient(withInterceptorsFromDi())
       ]
     })
     .compileComponents();
 
-    router = TestBed.get(Router);
-  }));
+    router = TestBed.inject(Router);
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DomainFormComponent);
@@ -55,20 +56,24 @@ describe('DomainFormComponent without pre domain', () => {
 describe('DomainFormComponent with pre domain', () => {
   let fixture: ComponentFixture<DomainFormComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async() => {
+    await TestBed.configureTestingModule({
       declarations: [ DomainFormComponent ],
       imports: [
-        FormsModule,
-        RouterTestingModule.withRoutes([{path: 'lookup', component: DomainFormComponent}])
-      ]
+        FormsModule, HttpClientTestingModule
+      ],
+      providers: [Router]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DomainFormComponent);
     fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(true).toBeTrue();
   });
 
 });

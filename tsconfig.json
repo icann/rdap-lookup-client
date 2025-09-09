@@ -7,11 +7,12 @@
     "declaration": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -23,6 +24,12 @@
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"
       ]
-    }
+    },
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LookupResponseComponent } from './lookup-response.component';
 import { LookupDomainInformationComponent } from './lookup-domain-information/lookup-domain-information';
 import { LookupAuthoritativeServerComponent } from './lookup-authoritative-server/lookup-authoritative-server';
@@ -9,7 +9,6 @@ import { LookupResellerComponent } from './lookup-reseller/lookup-reseller';
 
 import { FormsModule } from '@angular/forms';
 import { UrlParserPipe } from '../shared/pipes/url-parser.pipe';
-import { PrettyJsonModule } from 'angular2-prettyjson';
 import { MomentModule } from 'ngx-moment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -23,7 +22,7 @@ describe('LookupResponseComponent', () => {
   let fictureDnsSec: ComponentFixture<LookupDnssecComponent>;
   let fixture: ComponentFixture<LookupResponseComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         LookupRegistrarComponent,
@@ -41,7 +40,6 @@ describe('LookupResponseComponent', () => {
           [{path: 'lookup', component: LookupResponseComponent}]
         ),
         FormsModule,
-        PrettyJsonModule,
         MomentModule,
         BrowserAnimationsModule,
         MatExpansionModule,
