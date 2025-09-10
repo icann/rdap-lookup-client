@@ -1,7 +1,7 @@
 # Domain Name Registration Data Lookup RDAP Client
 
 This repository contains an example of Domain Name Registration Data Lookup using [RDAP](https://www.icann.org/rdap) 
-protocol. The example is implemented as a Single Page Application (SPA) using [Angular](https://angular.io/). 
+protocol. The example is implemented as a Single Page Application (SPA) using [Angular](https://angular.dev/). 
 The application gives you the ability to look up publicly available contact and other information related 
 to a domain name. 
 
@@ -9,7 +9,7 @@ to a domain name.
 
 
 The Domain Name Registration Data Lookup makes use of the Registration Data Access Protocol (RDAP) 
-to query, parse and display registration data in a human-friendly format. The results displayed come 
+to query, parse, and display registration data in a human-friendly format. The results displayed come 
 directly from registry operators and/or registrars in real-time. If the queried information is 
 not available in RDAP, then a proper error message will be displayed.
 
@@ -28,14 +28,15 @@ its structured output does enable more human-friendly services to be created.
 
 You should have Node.js and an npm package manager in your development environment. The project is implemented using Angular.
 
-* Node 10.9.0 or later. To get Node.js, go to [nodejs.org](https://nodejs.org/en/)
-* npm pacakge manager 6.4.0 or later. The [npm](https://www.npmjs.com/get-npm) is distributed with Node.js, which means
+* Node 18.19.1, 20.11.1, and 22.0.0 or later. To get Node.js, go to [nodejs.org](https://nodejs.org/en/)
+* npm pacakge manager 10.7.0 or later. The [npm](https://www.npmjs.com/get-npm) is distributed with Node.js, which means
 that when you download Node.js, you automatically get npm installed on your computer.
-* Angular 8.x.x. If you're not familiar with Angular, go to [angular.io](https://angular.io) to learn all about Angular.
+* Angular 19.2.14 If you're not familiar with Angular, go to [angular.dev](https://angular.dev/) to learn all about Angular.
+* For Node and Angular version compatibility, go to [version compatibility](https://angular.dev/reference/versions)
 
 # Running the application
 
-After you clone this repository or download the ZIP of this project, go to the root directory of this project.
+After you clone this repository or download the ZIP of this project, navigate to the root directory of this project.
 Run the following commands:
 
 * `npm install` to download all the npm modules needed by this project
