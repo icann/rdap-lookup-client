@@ -3,8 +3,9 @@ import { Entity } from '../../lookup/Entity';
 import { Contact } from '../../lookup/Contact';
 
 @Component({
-  selector: 'rwc-lookup-contact',
-  templateUrl: './lookup-contact.html'
+    selector: 'rwc-lookup-contact',
+    templateUrl: './lookup-contact.html',
+    standalone: false
 })
 export class  LookupContactComponent {
   @Input() contact: Contact;

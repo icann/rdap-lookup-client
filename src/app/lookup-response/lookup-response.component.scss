@@ -1,4 +1,4 @@
-@import '../../assets/scss/variables/variables';
+@use '../../assets/scss/variables/variables' as cs_variables;
 
 
 .domain-lookup {
@@ -7,7 +7,7 @@
 
   h1 {
     padding: 40px 0 11px;
-    color: $color-blue-dark;
+    color: cs_variables.$color-blue-dark;
     font-size: 24px;
     font-weight: bold;
   }

@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'urlParser'
+    name: 'urlParser',
+    standalone: false
 })
 export class UrlParserPipe implements PipeTransform {
 

@@ -3,8 +3,9 @@ import { Entity } from '../../lookup/Entity';
 import { Registrar } from 'src/app/lookup/Registrar';
 
 @Component({
-  selector: 'rwc-lookup-registrar',
-  templateUrl: './lookup-registrar.html'
+    selector: 'rwc-lookup-registrar',
+    templateUrl: './lookup-registrar.html',
+    standalone: false
 })
 export class  LookupRegistrarComponent {
   @Input() registrar: Registrar;

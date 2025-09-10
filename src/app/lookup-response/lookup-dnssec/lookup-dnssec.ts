@@ -2,9 +2,10 @@ import { Component, Input, ViewChild, ElementRef, ChangeDetectorRef, OnChanges }
 import { DnsSec } from '../../lookup/Dnssec';
 
 @Component({
-  selector: 'rwc-lookup-dnssec',
-  templateUrl: './lookup-dnssec.html',
-  styleUrls: ['./lookup-dnssec.component.scss']
+    selector: 'rwc-lookup-dnssec',
+    templateUrl: './lookup-dnssec.html',
+    styleUrls: ['./lookup-dnssec.component.scss'],
+    standalone: false
 })
 export class  LookupDnssecComponent implements OnChanges {
   @Input() dnsSec: DnsSec;

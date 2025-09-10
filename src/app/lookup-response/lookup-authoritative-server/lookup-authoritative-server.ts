@@ -2,8 +2,9 @@ import { Component, Input } from '@angular/core';
 import { AuthoritativeServer } from 'src/app/lookup/AuthoritativeServer';
 
 @Component({
-  selector: 'rwc-lookup-authoritative-server',
-  templateUrl: './lookup-authoritative-server.html'
+    selector: 'rwc-lookup-authoritative-server',
+    templateUrl: './lookup-authoritative-server.html',
+    standalone: false
 })
 export class  LookupAuthoritativeServerComponent {
   @Input() authoritativeServer: AuthoritativeServer;
