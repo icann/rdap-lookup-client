@@ -2,8 +2,9 @@ import { Component, Input } from '@angular/core';
 import { DomainInformation } from '../../lookup/DomainInformation';
 
 @Component({
-  selector: 'rwc-lookup-domain-information',
-  templateUrl: './lookup-domain-information.html'
+    selector: 'rwc-lookup-domain-information',
+    templateUrl: './lookup-domain-information.html',
+    standalone: false
 })
 export class  LookupDomainInformationComponent {
   @Input() domainInformation: DomainInformation;

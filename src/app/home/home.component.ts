@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { LookupService } from '../services/lookup.service';
 
 @Component({
-  selector: 'rwc-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'rwc-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   domain: string;

@@ -2,8 +2,9 @@ import { Component, Input } from '@angular/core';
 import { Reseller } from 'src/app/lookup/Reseller';
 
 @Component({
-  selector: 'rwc-lookup-reseller',
-  templateUrl: './lookup-reseller.html'
+    selector: 'rwc-lookup-reseller',
+    templateUrl: './lookup-reseller.html',
+    standalone: false
 })
 export class LookupResellerComponent {
   @Input() reseller: Reseller;

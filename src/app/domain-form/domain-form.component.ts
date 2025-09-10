@@ -2,9 +2,10 @@ import { Component, Input, OnInit} from '@angular/core';
 import { LookupService, MessageTypes } from '../services/lookup.service';
 
 @Component({
-  selector: 'rwc-domain-form',
-  templateUrl: './domain-form.component.html',
-  styleUrls: ['./domain-form.component.scss'],
+    selector: 'rwc-domain-form',
+    templateUrl: './domain-form.component.html',
+    styleUrls: ['./domain-form.component.scss'],
+    standalone: false
 })
 
 export class DomainFormComponent implements OnInit {

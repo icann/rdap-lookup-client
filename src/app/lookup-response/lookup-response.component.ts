@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { LookupService } from '../services/lookup.service';
 
 @Component({
-  selector: 'rwc-lookup-response',
-  templateUrl: './lookup-response.component.html',
-  styleUrls: ['./lookup-response.component.scss'],
-  providers: [DomainFormComponent]
+    selector: 'rwc-lookup-response',
+    templateUrl: './lookup-response.component.html',
+    styleUrls: ['./lookup-response.component.scss'],
+    providers: [DomainFormComponent],
+    standalone: false
 })
 export class LookupResponseComponent  {
   domainInLookup = false;
