@@ -1,10 +1,10 @@
-@import '../../assets/scss/variables/variables';
+@use '../../assets/scss/variables/variables' as cs_variables;
 
 form {
   display: flex;
   flex-wrap: wrap;
   label {
-    color: $color-black;
+    color: cs_variables.$color-black;
     align-self: flex-end;
     @media(max-width: 500px) {
       font-size: 0.75rem;
@@ -17,7 +17,7 @@ form {
   }
   > div {
     display: flex;
-    @media (max-width: $_BREAKPOINT_MOBILE) {
+    @media (max-width: cs_variables.$BREAKPOINT_MOBILE) {
       flex-wrap: wrap;
     }
     > div {
@@ -29,12 +29,12 @@ form {
         flex-grow: 1;
         > a {
           margin-left: auto;
-          @media(min-width: 500px) {
-            padding-right: 3px;
-          }
           padding-bottom: 3px;
           text-align: right;
           align-self: flex-end;
+          @media(min-width: 500px) {
+            padding-right: 3px;
+          }
         }
       }
     }
@@ -44,18 +44,20 @@ form {
     margin-bottom: 0;
   }
   button {
-    @media (max-width: $_BREAKPOINT_MOBILE) {
-      width: auto;
-      flex-basis: 100%;
-      padding: 12px 0;
-      margin: 10px 0 0;
-    }
     width: 200px;
     padding: 12px 4rem;
     margin: 0 0 0 2.5rem;
     opacity: 1;
     align-self: flex-end;
     min-width: 200px;
+
+    @media (max-width: cs_variables.$BREAKPOINT_MOBILE) {
+      width: auto;
+      flex-basis: 100%;
+      padding: 12px 0;
+      margin: 10px 0 0;
+    }
+
     &:disabled {
       opacity: 0.5;
     }
@@ -71,7 +73,7 @@ form {
     font-size: 0.875rem;
     padding-bottom: 10px;
     padding-top: 10px;
-    color: $color-black;
+    color: cs_variables.$color-black;
   }
 }
 
@@ -80,7 +82,7 @@ form {
   padding: 10px 100px;
   margin: 0 0 0 2.5rem;
 
-  @media (max-width: $_BREAKPOINT_MOBILE) {
+  @media (max-width: cs_variables.$BREAKPOINT_MOBILE) {
     width: auto;
     padding: 12px 0;
     margin: 10px 0 0;
