@@ -1,7 +1,7 @@
 # Domain Name Registration Data Lookup RDAP Client
 
 This repository contains an example of Domain Name Registration Data Lookup using [RDAP](https://www.icann.org/rdap) 
-protocol. The example is implemented as a Single Page Application (SPA) using [Angular](https://angular.io/). 
+protocol. The example is implemented as a Single Page Application (SPA) using [Angular](https://angular.dev/). 
 The application gives you the ability to look up publicly available contact and other information related 
 to a domain name. 
 
@@ -28,10 +28,11 @@ its structured output does enable more human-friendly services to be created.
 
 You should have Node.js and an npm package manager in your development environment. The project is implemented using Angular.
 
-* Node 10.9.0 or later. To get Node.js, go to [nodejs.org](https://nodejs.org/en/)
-* npm pacakge manager 6.4.0 or later. The [npm](https://www.npmjs.com/get-npm) is distributed with Node.js, which means
+* Node ^18.19.1 || ^20.11.1 || ^22.0.0 or later. To get Node.js, go to [nodejs.org](https://nodejs.org/en/)
+* npm pacakge manager 10.7.0 or later. The [npm](https://www.npmjs.com/get-npm) is distributed with Node.js, which means
 that when you download Node.js, you automatically get npm installed on your computer.
-* Angular 8.x.x. If you're not familiar with Angular, go to [angular.io](https://angular.io) to learn all about Angular.
+* Angular 18.2.x If you're not familiar with Angular, go to [angular.dev](https://angular.dev/) to learn all about Angular.
+* Visit for more detail about [version compatibility](https://angular.dev/reference/versions) 
 
 # Running the application
 
