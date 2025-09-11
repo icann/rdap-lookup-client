@@ -31,7 +31,7 @@ You should have Node.js and an npm package manager in your development environme
 * Node ^18.19.1 || ^20.11.1 || ^22.0.0 or later. To get Node.js, go to [nodejs.org](https://nodejs.org/en/)
 * npm pacakge manager 10.7.0 or later. The [npm](https://www.npmjs.com/get-npm) is distributed with Node.js, which means
 that when you download Node.js, you automatically get npm installed on your computer.
-* Angular 18.2.x If you're not familiar with Angular, go to [angular.dev](https://angular.dev/) to learn all about Angular.
+* Angular 19.2.x If you're not familiar with Angular, go to [angular.dev](https://angular.dev/) to learn all about Angular.
 * Visit for more detail about [version compatibility](https://angular.dev/reference/versions) 
 
 # Running the application
